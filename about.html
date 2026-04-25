@@ -1,182 +1,263 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About — FMSARP</title>
-  <link rel="stylesheet" href="css/style.css">
-  <style>
-    .page-hero {
-      padding: 4rem 2rem 3rem;
-      max-width: 960px;
-      margin: 0 auto;
-      border-bottom: 1px solid var(--border);
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About — FMSARP</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      .page-hero {
+        padding: 4rem 2rem 3rem;
+        max-width: 960px;
+        margin: 0 auto;
+        border-bottom: 1px solid var(--border);
+      }
 
-    .page-hero h1 {
-      font-family: var(--font-display);
-      font-size: clamp(60px, 12vw, 100px);
-      color: var(--green);
-      text-shadow: 0 0 20px var(--green);
-      line-height: 0.9;
-      letter-spacing: 6px;
-    }
+      .page-hero h1 {
+        font-family: var(--font-display);
+        font-size: clamp(60px, 12vw, 100px);
+        color: var(--green);
+        text-shadow: 0 0 20px var(--green);
+        line-height: 0.9;
+        letter-spacing: 6px;
+      }
 
-    main {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 2.5rem 2rem 4rem;
-      display: grid;
-      grid-template-columns: 1fr 260px;
-      gap: 2.5rem;
-      align-items: start;
-    }
+      main {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 2.5rem 2rem 4rem;
+        display: grid;
+        grid-template-columns: 1fr 260px;
+        gap: 2.5rem;
+        align-items: start;
+      }
 
-    .about-content p {
-      font-family: var(--font-body);
-      font-size: 15px;
-      color: var(--text-dim);
-      line-height: 1.8;
-      margin-bottom: 1.5rem;
-    }
+      .about-content p {
+        font-family: var(--font-body);
+        font-size: 15px;
+        color: var(--text-dim);
+        line-height: 1.8;
+        margin-bottom: 1.5rem;
+      }
 
-    .about-content h2 {
-      font-family: var(--font-display);
-      font-size: 36px;
-      color: var(--green);
-      letter-spacing: 3px;
-      margin: 2.5rem 0 1rem;
-      padding-bottom: 6px;
-      border-bottom: 1px solid var(--border);
-    }
+      .about-content h2 {
+        font-family: var(--font-display);
+        font-size: 36px;
+        color: var(--green);
+        letter-spacing: 3px;
+        margin: 2.5rem 0 1rem;
+        padding-bottom: 6px;
+        border-bottom: 1px solid var(--border);
+      }
 
-    .about-content ul {
-      font-family: var(--font-body);
-      font-size: 14px;
-      color: var(--text-dim);
-      line-height: 2.2;
-      padding-left: 0;
-      margin-bottom: 1.5rem;
-      list-style: none;
-    }
+      .about-content ul {
+        font-family: var(--font-body);
+        font-size: 14px;
+        color: var(--text-dim);
+        line-height: 2.2;
+        padding-left: 0;
+        margin-bottom: 1.5rem;
+        list-style: none;
+      }
 
-    .about-content ul li::before { content: '> '; color: var(--green); }
+      .about-content ul li::before {
+        content: "> ";
+        color: var(--green);
+      }
 
-    .contact-block {
-      background: var(--bg2);
-      border: 1px solid var(--border);
-      border-left: 3px solid var(--green-dim);
-      padding: 1.5rem;
-      margin-top: 2rem;
-    }
+      .contact-block {
+        background: var(--bg2);
+        border: 1px solid var(--border);
+        border-left: 3px solid var(--green-dim);
+        padding: 1.5rem;
+        margin-top: 2rem;
+      }
 
-    .contact-block h3 {
-      font-family: var(--font-display);
-      font-size: 28px;
-      color: var(--green);
-      letter-spacing: 3px;
-      margin-bottom: 0.75rem;
-    }
+      .contact-block h3 {
+        font-family: var(--font-display);
+        font-size: 28px;
+        color: var(--green);
+        letter-spacing: 3px;
+        margin-bottom: 0.75rem;
+      }
 
-    .contact-block p {
-      font-family: var(--font-body);
-      font-size: 13px;
-      color: var(--text-dim);
-      line-height: 1.8;
-    }
-  </style>
-</head>
-<body>
-
-<nav>
-  <a class="nav-logo" href="index.html">FMSARP</a>
-  <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="index.html#builds">Build Log</a></li>
-    <li><a href="about.html" class="active">About</a></li>
-  </ul>
-  <div class="nav-right">
-    <div class="status-dot"></div>
-    SYSTEM ONLINE
-  </div>
-</nav>
-
-<div class="page-hero">
-  <p style="font-size:11px; letter-spacing:4px; color:var(--text-dim); text-transform:uppercase; margin-bottom:1rem;"><span style="color:var(--green)">&gt;</span> whoami</p>
-  <h1>ABOUT</h1>
-</div>
-
-<main>
-  <div class="about-content">
-    <p>Hey, I'm Franklin. IT support professional, Google-certified, and someone who spends most weekends turning hardware into either something useful or a very expensive paperweight. This site — FMSARP — is where I log the builds, the experiments, and the lessons.</p>
-
-    <p>Most of what you'll find here sits at the intersection of hardware and software: Raspberry Pis, home networking, keyboard builds, electronics repair, and whatever else I decide to take apart this month.</p>
-
-    <h2>// WHY THIS SITE</h2>
-
-    <p>I learn better by doing than by reading. This blog is my public build log — a way to document what I'm working on, share what actually worked, and be honest about what didn't. If something I wrote saves you a Saturday afternoon of debugging, that's a win.</p>
-
-    <h2>// WHAT I'M INTO</h2>
-
-    <ul>
-      <li>Raspberry Pi &amp; single-board computers</li>
-      <li>Home networking &amp; self-hosted services</li>
-      <li>Electronics repair (the art of not buying new things)</li>
-      <li>Mechanical keyboards — building, not just buying</li>
-      <li>3D printing for functional parts</li>
-      <li>Linux, tinkering, and breaking things on purpose</li>
-      <li>HTML &amp; CSS (currently learning)</li>
-    </ul>
-
-    <h2>// HOW I WRITE</h2>
-
-    <p>Every post is a real build I actually did. I try to be honest about what went wrong, what cost more than expected, and what I'd do differently. These aren't polished tutorials — they're real logs of what happened.</p>
-
-    <div class="contact-block">
-      <h3>// GET IN TOUCH</h3>
-      <p>Find me on GitHub or drop me an email. I'm not hard to find — just look for the guy with too many USB drives and not enough desk space.</p>
-      <div style="margin-top:1rem; display:flex; flex-direction:column; gap:8px;">
-        <a href="mailto:hello@fmsarp.com" style="font-size:11px; color:var(--text-dim); text-decoration:none; letter-spacing:2px; text-transform:uppercase; transition:color 0.15s;" onmouseover="this.style.color='var(--green)'" onmouseout="this.style.color='var(--text-dim)'">→ hello@fmsarp.com</a>
-        <a href="https://github.com/fmsarp" target="_blank" style="font-size:11px; color:var(--text-dim); text-decoration:none; letter-spacing:2px; text-transform:uppercase; transition:color 0.15s;" onmouseover="this.style.color='var(--green)'" onmouseout="this.style.color='var(--text-dim)'">→ github.com/fmsarp</a>
+      .contact-block p {
+        font-family: var(--font-body);
+        font-size: 13px;
+        color: var(--text-dim);
+        line-height: 1.8;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a class="nav-logo" href="index.html">FMSARP</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#builds">Build Log</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+      </ul>
+      <div class="nav-right">
+        <div class="status-dot"></div>
+        SYSTEM ONLINE
       </div>
-    </div>
-  </div>
+    </nav>
 
-  <aside>
-    <div class="sidebar-block">
-      <span class="section-label">Stats</span>
-      <div class="stat-grid" style="margin-top:1rem;">
-        <div class="stat-item"><span class="stat-num">5</span><span class="stat-lbl">Builds</span></div>
-        <div class="stat-item"><span class="stat-num">3</span><span class="stat-lbl">Bricks</span></div>
-        <div class="stat-item"><span class="stat-num">2025</span><span class="stat-lbl">Since</span></div>
-        <div class="stat-item"><span class="stat-num">∞</span><span class="stat-lbl">Coffee</span></div>
-      </div>
+    <div class="page-hero">
+      <p
+        style="
+          font-size: 11px;
+          letter-spacing: 4px;
+          color: var(--text-dim);
+          text-transform: uppercase;
+          margin-bottom: 1rem;
+        "
+      >
+        <span style="color: var(--green)">&gt;</span> whoami
+      </p>
+      <h1>ABOUT</h1>
     </div>
 
-    <div class="sidebar-block">
-      <span class="section-label">Certs &amp; skills</span>
-      <div class="terminal-block" style="margin-top:1rem;">
-        <div class="cmd">&gt; ls ./certs</div>
-        <div class="out ok">Google IT Support ✓</div>
-        <div class="out">AZ-900 (exploring)</div>
-        <div class="out">CompTIA A+ (radar)</div>
-        <div class="cmd">&gt; ls ./skills</div>
-        <div class="out ok">Linux / Networking</div>
-        <div class="out ok">Hardware repair</div>
-        <div class="out ok">Raspberry Pi / SBC</div>
-        <div class="out">HTML &amp; CSS (WIP)</div>
+    <main>
+      <div class="about-content">
+        <p>
+          Hey, I'm Franklin. IT support professional, Google-certified, and
+          someone who spends most weekends turning hardware into either
+          something useful or a very expensive paperweight. This site — FMSARP —
+          is where I log the builds, the experiments, and the lessons.
+        </p>
+
+        <p>
+          Most of what you'll find here sits at the intersection of hardware and
+          software: Raspberry Pis, home networking, keyboard builds, electronics
+          repair, and whatever else I decide to take apart this month.
+        </p>
+
+        <h2>// WHY THIS SITE</h2>
+
+        <p>
+          I learn better by doing than by reading. This blog is my public build
+          log — a way to document what I'm working on, share what actually
+          worked, and be honest about what didn't. If something I wrote saves
+          you a Saturday afternoon of debugging, that's a win.
+        </p>
+
+        <h2>// WHAT I'M INTO</h2>
+
+        <ul>
+          <li>Raspberry Pi &amp; single-board computers</li>
+          <li>Home networking &amp; self-hosted services</li>
+          <li>Electronics repair (the art of not buying new things)</li>
+          <li>Mechanical keyboards — building, not just buying</li>
+          <li>3D printing for functional parts</li>
+          <li>Linux, tinkering, and breaking things on purpose</li>
+          <li>HTML &amp; CSS (currently learning)</li>
+        </ul>
+
+        <h2>// HOW I WRITE</h2>
+
+        <p>
+          Every post is a real build I actually did. I try to be honest about
+          what went wrong, what cost more than expected, and what I'd do
+          differently. These aren't polished tutorials — they're real logs of
+          what happened.
+        </p>
+
+        <div class="contact-block">
+          <h3>// GET IN TOUCH</h3>
+          <p>
+            Find me on GitHub or drop me an email. I'm not hard to find — just
+            look for the guy with too many USB drives and not enough desk space.
+          </p>
+          <div
+            style="
+              margin-top: 1rem;
+              display: flex;
+              flex-direction: column;
+              gap: 8px;
+            "
+          >
+            <a
+              href="mailto:fmsarp@gmail.com"
+              style="
+                font-size: 11px;
+                color: var(--text-dim);
+                text-decoration: none;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+                transition: color 0.15s;
+              "
+              onmouseover="this.style.color = 'var(--green)'"
+              onmouseout="this.style.color = 'var(--text-dim)'"
+              >→ fmsarp@gmail.com</a
+            >
+            <a
+              href="https://github.com/fmsarp"
+              target="_blank"
+              style="
+                font-size: 11px;
+                color: var(--text-dim);
+                text-decoration: none;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+                transition: color 0.15s;
+              "
+              onmouseover="this.style.color = 'var(--green)'"
+              onmouseout="this.style.color = 'var(--text-dim)'"
+              >→ github.com/fmsarp</a
+            >
+          </div>
+        </div>
       </div>
-    </div>
 
-    <a class="btn-primary" href="index.html" style="text-align:center;">← All builds</a>
-  </aside>
-</main>
+      <aside>
+        <div class="sidebar-block">
+          <span class="section-label">Stats</span>
+          <div class="stat-grid" style="margin-top: 1rem">
+            <div class="stat-item">
+              <span class="stat-num">5</span
+              ><span class="stat-lbl">Builds</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num">3</span
+              ><span class="stat-lbl">Bricks</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num">2025</span
+              ><span class="stat-lbl">Since</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num">∞</span
+              ><span class="stat-lbl">Coffee</span>
+            </div>
+          </div>
+        </div>
 
-<footer>
-  <span class="logo">FMSARP</span>
-  <span>Franklin's build log &mdash; 2025</span>
-  <span>fmsarp.com</span>
-</footer>
+        <div class="sidebar-block">
+          <span class="section-label">Certs &amp; skills</span>
+          <div class="terminal-block" style="margin-top: 1rem">
+            <div class="cmd">&gt; ls ./certs</div>
+            <div class="out ok">Google IT Support ✓</div>
+            <div class="out">AZ-900 (exploring)</div>
+            <div class="out">CompTIA A+ (radar)</div>
+            <div class="cmd">&gt; ls ./skills</div>
+            <div class="out ok">Linux / Networking</div>
+            <div class="out ok">Hardware repair</div>
+            <div class="out ok">Raspberry Pi / SBC</div>
+            <div class="out">HTML &amp; CSS (WIP)</div>
+          </div>
+        </div>
 
-</body>
+        <a class="btn-primary" href="index.html" style="text-align: center"
+          >← All builds</a
+        >
+      </aside>
+    </main>
+
+    <footer>
+      <span class="logo">FMSARP</span>
+      <span>Franklin's build log &mdash; 2025</span>
+      <span>fmsarp.com</span>
+    </footer>
+  </body>
 </html>
