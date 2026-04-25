@@ -151,7 +151,15 @@
     <div class="status-dot"></div>
     SYSTEM ONLINE
   </div>
+  <button class="nav-hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+<div class="nav-mobile-menu" id="mobileMenu">
+  <a href="index.html" class="active">Home</a>
+  <a href="index.html#builds">Build Log</a>
+  <a href="about.html">About</a>
+</div>
 
 <div class="ticker">
   <div class="ticker-inner">
@@ -167,8 +175,9 @@
     <p class="hero-sub">Hardware hacks, DIY experiments, and <em>stuff built with bare hands</em>. No fluff — just builds, breakdowns, and lessons learned the hard way.</p>
   </div>
   <div class="hero-meta">
-    <strong>1</strong> build logged
-    <strong>1</strong> thing bricked
+    <strong>5</strong> builds logged
+    <strong>3</strong> things bricked
+    <strong>∞</strong> coffee consumed
   </div>
 </div>
 
@@ -176,7 +185,7 @@
   <div>
     <div class="section-header" id="builds">
       <span class="section-label">Recent builds</span>
-      <span class="section-header-right">1 entry</span>
+      <span class="section-header-right">5 entries</span>
     </div>
 
     <a class="post-card featured" href="posts/openwrt-router.html">
@@ -194,14 +203,70 @@
         <span class="read-more">Read build</span>
       </div>
     </a>
+
+    <a class="post-card" href="posts/raspberry-pi-nas.html">
+      <div class="post-tags">
+        <span class="post-tag hardware">Hardware</span>
+        <span class="post-tag">Raspberry Pi</span>
+      </div>
+      <div class="post-title">Building a Headless NAS with a Raspberry Pi 5</div>
+      <div class="post-excerpt">4TB of storage, Samba shares, and automatic backups — all running on a $35 board. Here's how I wired it, configured it, and what I'd do differently next time.</div>
+      <div class="post-meta">
+        <span>Apr 12, 2025 &mdash; 8 min read</span>
+        <span class="read-more">Read build</span>
+      </div>
+    </a>
+
+    <a class="post-card" href="posts/laptop-capacitor.html">
+      <div class="post-tags">
+        <span class="post-tag repair">Repair</span>
+        <span class="post-tag">Electronics</span>
+      </div>
+      <div class="post-title">Reviving a Dead Laptop with a $4 Capacitor</div>
+      <div class="post-excerpt">Everyone said throw it out. I said hold my multimeter. A blown cap on the power rail was all it was.</div>
+      <div class="post-meta">
+        <span>Mar 29, 2025 &mdash; 5 min read</span>
+        <span class="read-more">Read build</span>
+      </div>
+    </a>
+
+    <a class="post-card" href="posts/smart-home-dashboard.html">
+      <div class="post-tags">
+        <span class="post-tag software">Software</span>
+        <span class="post-tag">Smarthome</span>
+      </div>
+      <div class="post-title">DIY Smart Home Dashboard on an Old iPad</div>
+      <div class="post-excerpt">Instead of a $200 smart display, I wall-mounted a 2013 iPad with a Node-RED dashboard. Cost me an afternoon and some double-sided tape.</div>
+      <div class="post-meta">
+        <span>Mar 10, 2025 &mdash; 6 min read</span>
+        <span class="read-more">Read build</span>
+      </div>
+    </a>
+
+    <a class="post-card" href="posts/mechanical-keyboard.html">
+      <div class="post-tags">
+        <span class="post-tag hardware">Hardware</span>
+        <span class="post-tag">Keyboards</span>
+        <span class="post-tag">Woodworking</span>
+      </div>
+      <div class="post-title">Custom Mechanical Keyboard: The Full Build</div>
+      <div class="post-excerpt">Tray-mount 65%, Gateron yellows, hand-wired with QMK firmware. Built the case out of walnut because why not go overboard.</div>
+      <div class="post-meta">
+        <span>Feb 18, 2025 &mdash; 12 min read</span>
+        <span class="read-more">Read build</span>
+      </div>
+    </a>
+  </div>
+
   <aside>
     <div class="sidebar-block">
       <span class="section-label">About</span>
       <p style="font-family:var(--font-body); font-size:13px; color:var(--text-dim); line-height:1.7; margin-bottom:1rem;">Franklin. IT guy, hardware tinkerer, chronic over-engineer. I break things on purpose so I can figure out how to fix them.</p>
       <div class="stat-grid">
-        <div class="stat-item"><span class="stat-num">1</span><span class="stat-lbl">Build</span></div>
-        <div class="stat-item"><span class="stat-num">1</span><span class="stat-lbl">Bricked</span></div>
-        <div class="stat-item"><span class="stat-num">2026</span><span class="stat-lbl">Since</span></div>
+        <div class="stat-item"><span class="stat-num">5</span><span class="stat-lbl">Builds</span></div>
+        <div class="stat-item"><span class="stat-num">3</span><span class="stat-lbl">Bricks</span></div>
+        <div class="stat-item"><span class="stat-num">2025</span><span class="stat-lbl">Since</span></div>
+        <div class="stat-item"><span class="stat-num">∞</span><span class="stat-lbl">Coffee</span></div>
       </div>
     </div>
 
@@ -215,6 +280,8 @@
         <span class="tag-pill">Arduino</span>
         <span class="tag-pill">Linux</span>
         <span class="tag-pill">Smarthome</span>
+        <span class="tag-pill">Keyboards</span>
+        <span class="tag-pill">Woodworking</span>
       </div>
     </div>
 
@@ -223,10 +290,14 @@
       <div class="terminal-block">
         <div class="cmd">&gt; git log --oneline</div>
         <a class="out ok" href="posts/openwrt-router.html">f7a91 openwrt router</a><br>
+        <a class="out" href="posts/raspberry-pi-nas.html">a1f3c NAS build v2</a><br>
+        <a class="out" href="posts/laptop-capacitor.html">d8e21 laptop cap fix</a><br>
+        <a class="out" href="posts/smart-home-dashboard.html">9b0fa smart display</a><br>
         <div class="cmd">&gt; whoami</div>
-        <div class="out ok">franklin</div>
+        <div class="out ok">franklin @ fmsarp.com</div>
       </div>
     </div>
+
   </aside>
 </main>
 

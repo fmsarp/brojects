@@ -90,6 +90,20 @@
       main { grid-template-columns: 1fr !important; padding: 1.5rem 1rem 3rem; }
       aside { border-left: none; border-top: 1px solid var(--border); padding-left: 0; padding-top: 2rem; }
     }
+
+    @media (max-width: 768px) {
+      .page-hero, .hero, .post-hero { padding: 2rem 1rem 1.5rem !important; grid-template-columns: 1fr !important; }
+      main { grid-template-columns: 1fr !important; padding: 1.5rem 1rem 3rem !important; gap: 1.5rem !important; }
+      .post-content { max-width: 100% !important; }
+      aside { border-left: none !important; border-top: 1px solid var(--border); padding-left: 0 !important; padding-top: 2rem; }
+      .nav-posts { grid-template-columns: 1fr !important; }
+      .parts-table { display: block; overflow-x: auto; }
+      pre { font-size: 11px !important; padding: 0.75rem !important; overflow-x: auto; }
+      .hero-meta, .hero-cta { display: none !important; }
+    }
+    @media (max-width: 480px) {
+      .post-hero h1, h1 { font-size: 48px !important; }
+    }
   </style>
 </head>
 <body>
@@ -105,7 +119,15 @@
     <div class="status-dot"></div>
     SYSTEM ONLINE
   </div>
+  <button class="nav-hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+<div class="nav-mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a>
+  <a href="index.html#builds">Build Log</a>
+  <a href="about.html" class="active">About</a>
+</div>
 
 <div class="page-hero">
   <p style="font-size:11px; letter-spacing:4px; color:var(--text-dim); text-transform:uppercase; margin-bottom:1rem;"><span style="color:var(--green)">&gt;</span> whoami</p>
