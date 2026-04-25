@@ -249,3 +249,99 @@ footer {
 }
 
 footer .logo { color: var(--green); font-family: var(--font-display); font-size: 20px; letter-spacing: 3px; }
+
+/* =====================
+   RESPONSIVE / MOBILE
+   ===================== */
+
+@media (max-width: 768px) {
+
+  /* NAV — hide links, show logo + status only */
+  nav { padding: 0 1rem; }
+  .nav-links { display: none; }
+  .nav-right { font-size: 10px; }
+
+  /* HERO */
+  .hero,
+  .page-hero {
+    padding: 2rem 1rem 1.5rem;
+    grid-template-columns: 1fr !important;
+  }
+
+  .hero-meta,
+  .hero-cta { display: none; }
+
+  /* MAIN LAYOUT — stack sidebar below content */
+  main {
+    grid-template-columns: 1fr !important;
+    padding: 1.5rem 1rem 3rem;
+    gap: 2rem;
+  }
+
+  /* SIDEBAR — remove left border when stacked */
+  aside {
+    border-left: none;
+    border-top: 1px solid var(--border);
+    padding-left: 0;
+    padding-top: 2rem;
+  }
+
+  /* POST CARDS */
+  .post-card { padding: 1rem; }
+
+  /* TICKER — slightly smaller */
+  .ticker { font-size: 10px; }
+
+  /* FOOTER — stack vertically */
+  footer {
+    flex-direction: column;
+    gap: 6px;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  /* IMAGES — full height on mobile */
+  .post-image img { max-height: 260px; }
+
+  /* BUTTONS — full width on mobile */
+  .btn-primary,
+  .btn-secondary {
+    display: block;
+    text-align: center;
+    width: 100%;
+  }
+
+  /* POST HERO */
+  .post-hero { padding: 2rem 1rem 1.5rem; }
+
+  .nav-posts { grid-template-columns: 1fr !important; }
+
+  /* IDENTITY / SKILLS / CERT / CONTACT GRIDS */
+  .identity-strip,
+  .skills-grid,
+  .cert-grid,
+  .builds-grid,
+  .contact-grid { grid-template-columns: 1fr !important; }
+
+  .contact-block { grid-template-columns: 1fr !important; }
+
+  /* STAT GRID — keep 2 cols on mobile, it fits */
+  .stat-grid { grid-template-columns: 1fr 1fr; }
+
+  /* TABLE — allow horizontal scroll */
+  .parts-table { display: block; overflow-x: auto; }
+
+  /* PRE / CODE BLOCKS */
+  pre { font-size: 11px; padding: 1rem; }
+}
+
+@media (max-width: 480px) {
+  .hero h1,
+  .page-hero h1 { font-size: 64px; }
+
+  .post-hero h1 { font-size: 36px !important; }
+
+  nav { height: 46px; }
+
+  .nav-logo { font-size: 24px; }
+}
