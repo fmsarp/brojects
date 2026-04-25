@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Building a Headless NAS with a Raspberry Pi 5 — Brojects">
+  <meta name="description" content="Building a Headless NAS with a Raspberry Pi 5 — FMSARP">
   <title>Building a Headless NAS with a Raspberry Pi 5 — BROJECTS</title>
   <link rel="stylesheet" href="../css/style.css">
   <style>
     .post-hero {
-      border-bottom: var(--rule);
+      border-bottom: 1px solid var(--border);
       padding: 3rem 2rem 2.5rem;
       max-width: 900px;
       margin: 0 auto;
@@ -18,7 +18,7 @@
       font-size: 10px;
       letter-spacing: 3px;
       text-transform: uppercase;
-      color: var(--ink3);
+      color: var(--text-dim);
       text-decoration: none;
       display: inline-flex;
       align-items: center;
@@ -27,7 +27,7 @@
       transition: color 0.15s;
     }
 
-    .back-link:hover { color: var(--ink); }
+    .back-link:hover { color: var(--text); }
     .back-link::before { content: '←'; }
 
     .post-tags {
@@ -38,7 +38,7 @@
       font-size: 10px;
       letter-spacing: 2px;
       text-transform: uppercase;
-      color: var(--ink3);
+      color: var(--text-dim);
     }
 
     .post-tag-item { border-right: 1px solid var(--ink4); padding-right: 8px; }
@@ -46,9 +46,9 @@
     .post-tag-item.red { color: var(--red); }
 
     .post-hero h1 {
-      font-family: 'Bebas Neue', sans-serif;
+      font-family: var(--font-display);
       font-size: clamp(40px, 7vw, 72px);
-      color: var(--ink);
+      color: var(--text);
       line-height: 1;
       letter-spacing: 2px;
       margin-bottom: 1rem;
@@ -58,10 +58,10 @@
       display: flex;
       gap: 2rem;
       font-size: 10px;
-      color: var(--ink3);
+      color: var(--text-dim);
       letter-spacing: 2px;
       text-transform: uppercase;
-      border-top: 1px solid var(--ink4);
+      border-top: 1px solid var(--border);
       padding-top: 1rem;
       margin-top: 1rem;
     }
@@ -80,37 +80,37 @@
     .post-content { max-width: 580px; }
 
     .post-content p {
-      font-family: 'Courier Prime', monospace;
+      font-family: var(--font-body);
       font-size: 14px;
-      color: var(--ink2);
+      color: var(--text-dim);
       line-height: 1.9;
       margin-bottom: 1.5rem;
     }
 
     .post-content h2 {
-      font-family: 'Bebas Neue', sans-serif;
+      font-family: var(--font-display);
       font-size: 32px;
-      color: var(--ink);
+      color: var(--text);
       letter-spacing: 2px;
       margin: 2.5rem 0 1rem;
       padding-bottom: 6px;
-      border-bottom: 1px solid var(--ink4);
+      border-bottom: 1px solid var(--border);
     }
 
     .post-content h3 {
-      font-family: 'Space Mono', monospace;
+      font-family: var(--font-mono);
       font-size: 12px;
       font-weight: 700;
       letter-spacing: 3px;
       text-transform: uppercase;
-      color: var(--ink);
+      color: var(--text);
       margin: 2rem 0 0.75rem;
     }
 
     .post-content ul, .post-content ol {
-      font-family: 'Courier Prime', monospace;
+      font-family: var(--font-body);
       font-size: 13px;
-      color: var(--ink2);
+      color: var(--text-dim);
       line-height: 2;
       padding-left: 1.5rem;
       margin-bottom: 1.5rem;
@@ -119,18 +119,18 @@
     .post-content li { margin-bottom: 4px; }
 
     .post-content code {
-      font-family: 'Space Mono', monospace;
+      font-family: var(--font-mono);
       font-size: 12px;
-      background: var(--paper3);
-      border: 1px solid var(--ink4);
+      background: var(--bg4);
+      border: 1px solid var(--border);
       padding: 1px 6px;
-      color: var(--ink);
+      color: var(--text);
     }
 
     .post-content pre {
       background: var(--ink);
       color: var(--paper2);
-      font-family: 'Space Mono', monospace;
+      font-family: var(--font-mono);
       font-size: 12px;
       padding: 1.25rem;
       margin: 1.5rem 0;
@@ -148,59 +148,59 @@
 
     .callout {
       border-left: 4px solid var(--ink);
-      background: var(--paper2);
+      background: var(--bg3);
       padding: 1rem 1.25rem;
       margin: 1.5rem 0;
-      font-family: 'Courier Prime', monospace;
+      font-family: var(--font-body);
       font-size: 13px;
-      color: var(--ink2);
+      color: var(--text-dim);
       line-height: 1.8;
       font-style: italic;
     }
 
-    .callout strong { color: var(--ink); font-style: normal; }
+    .callout strong { color: var(--text); font-style: normal; }
 
     .parts-table {
       width: 100%;
       border-collapse: collapse;
       margin: 1.5rem 0;
-      font-family: 'Courier Prime', monospace;
+      font-family: var(--font-body);
       font-size: 12px;
     }
 
     .parts-table th {
-      font-family: 'Space Mono', monospace;
+      font-family: var(--font-mono);
       font-size: 9px;
       letter-spacing: 3px;
       text-transform: uppercase;
-      color: var(--ink3);
+      color: var(--text-dim);
       text-align: left;
       padding: 8px;
-      border-bottom: var(--rule);
+      border-bottom: 1px solid var(--border);
     }
 
     .parts-table td {
       padding: 8px;
-      border-bottom: 1px solid var(--ink4);
-      color: var(--ink2);
+      border-bottom: 1px solid var(--border);
+      color: var(--text-dim);
       line-height: 1.6;
     }
 
-    .parts-table tr:hover td { background: var(--paper2); }
+    .parts-table tr:hover td { background: var(--bg3); }
 
-    .price { color: var(--ink); font-weight: 700; }
+    .price { color: var(--text); font-weight: 700; }
 
     .post-footer {
       margin-top: 3rem;
       padding-top: 1.5rem;
-      border-top: var(--rule);
+      border-top: 1px solid var(--border);
     }
 
     .post-footer-label {
       font-size: 10px;
       letter-spacing: 4px;
       text-transform: uppercase;
-      color: var(--ink3);
+      color: var(--text-dim);
       margin-bottom: 1rem;
     }
 
@@ -211,28 +211,28 @@
     }
 
     .nav-post-link {
-      border: 1px solid var(--ink4);
+      border: 1px solid var(--border);
       padding: 1rem;
       text-decoration: none;
       color: inherit;
       transition: background 0.15s;
     }
 
-    .nav-post-link:hover { background: var(--paper2); }
+    .nav-post-link:hover { background: var(--bg3); }
 
     .nav-post-dir {
       font-size: 9px;
       letter-spacing: 3px;
       text-transform: uppercase;
-      color: var(--ink3);
+      color: var(--text-dim);
       margin-bottom: 4px;
     }
 
     .nav-post-title {
-      font-family: 'Bebas Neue', sans-serif;
+      font-family: var(--font-display);
       font-size: 18px;
       letter-spacing: 1px;
-      color: var(--ink);
+      color: var(--text);
     }
 
     /* SIDEBAR */
@@ -240,19 +240,19 @@
 
     .toc-list {
       list-style: none;
-      font-family: 'Courier Prime', monospace;
+      font-family: var(--font-body);
       font-size: 12px;
-      color: var(--ink3);
+      color: var(--text-dim);
       line-height: 2;
     }
 
     .toc-list a {
-      color: var(--ink3);
+      color: var(--text-dim);
       text-decoration: none;
       transition: color 0.15s;
     }
 
-    .toc-list a:hover { color: var(--ink); }
+    .toc-list a:hover { color: var(--text); }
 
     .toc-list li::before {
       content: '§ ';
@@ -260,21 +260,21 @@
     }
 
     .spec-list {
-      font-family: 'Courier Prime', monospace;
+      font-family: var(--font-body);
       font-size: 11px;
-      color: var(--ink2);
+      color: var(--text-dim);
       line-height: 2;
       border-left: 2px solid var(--ink4);
       padding-left: 10px;
     }
 
-    .spec-list strong { color: var(--ink); display: block; font-size: 10px; letter-spacing: 1px; }
+    .spec-list strong { color: var(--text); display: block; font-size: 10px; letter-spacing: 1px; }
   </style>
 </head>
 <body>
 
 <nav>
-  <a class="nav-logo" href="../index.html">Brojects</a>
+  <a class="nav-logo" href="../index.html">FMSARP</a>
   <ul class="nav-links">
     <li><a href="../index.html">Home</a></li>
     <li><a href="../index.html#builds">Build Log</a></li>

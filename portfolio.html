@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="FMSARP Portfolio — Franklin, IT Support Professional & Hardware Tinkerer">
+  <title>Portfolio — FMSARP</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .page-hero {
+      padding: 4rem 2rem 3rem;
+      max-width: 960px;
+      margin: 0 auto;
+      border-bottom: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 2rem;
+      align-items: end;
+    }
+
+    .page-hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(60px, 12vw, 100px);
+      color: var(--green);
+      text-shadow: 0 0 20px var(--green);
+      line-height: 0.9;
+      letter-spacing: 6px;
+    }
+
+    .hero-sub {
+      font-family: var(--font-body);
+      font-size: 15px;
+      color: var(--text-dim);
+      line-height: 1.7;
+      margin-top: 1rem;
+      font-style: italic;
+    }
+
+    .hero-cta { display: flex; flex-direction: column; gap: 8px; align-items: flex-end; }
+
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 3rem 2rem 4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 4rem;
+    }
+
+    /* IDENTITY */
+    .identity-strip {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+    }
+
+    .identity-cell { background: var(--bg2); padding: 1.25rem; }
+    .identity-cell-label { font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--text-dim); margin-bottom: 6px; }
+    .identity-cell-value { font-family: var(--font-display); font-size: 24px; letter-spacing: 2px; color: var(--green); line-height: 1.2; }
+    .identity-cell-sub { font-family: var(--font-body); font-size: 12px; color: var(--text-dim); margin-top: 4px; }
+
+    /* SKILLS */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+    }
+
+    .skill-card { background: var(--bg2); padding: 1.25rem; }
+
+    .skill-card-icon {
+      font-family: var(--font-display);
+      font-size: 36px;
+      color: var(--green);
+      text-shadow: 0 0 8px var(--green);
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border2);
+      display: inline-block;
+    }
+
+    .skill-card h3 { font-size: 10px; font-weight: normal; letter-spacing: 3px; text-transform: uppercase; color: var(--text-mid); margin-bottom: 10px; }
+
+    .skill-list { list-style: none; font-family: var(--font-body); font-size: 13px; color: var(--text-dim); line-height: 2.1; }
+    .skill-list li::before { content: '> '; color: var(--green-dim); }
+
+    /* CERTS */
+    .cert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; }
+
+    .cert-card {
+      border: 1px solid var(--border);
+      background: var(--bg2);
+      padding: 1.25rem;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .cert-card:hover { border-color: var(--green-dim); background: var(--bg3); }
+
+    .cert-badge {
+      font-family: var(--font-display);
+      font-size: 28px;
+      color: var(--green);
+      background: var(--bg3);
+      border: 1px solid var(--green-dim);
+      width: 52px;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      letter-spacing: 1px;
+      flex-shrink: 0;
+      text-shadow: 0 0 6px var(--green);
+    }
+
+    .cert-info h3 { font-size: 12px; font-weight: normal; color: var(--text); letter-spacing: 1px; margin-bottom: 4px; }
+    .cert-issuer { font-size: 10px; color: var(--text-dim); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 4px; }
+    .cert-status { font-family: var(--font-body); font-size: 12px; color: var(--text-dim); }
+    .cert-status.earned { color: var(--green); }
+    .cert-status.in-progress { color: var(--amber); }
+
+    /* BUILDS */
+    .builds-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; }
+
+    .build-card {
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--green-dim);
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      background: var(--bg2);
+      transition: border-left-color 0.2s, background 0.2s;
+    }
+
+    .build-card:hover { border-left-color: var(--green); background: var(--bg3); }
+
+    .build-card-header { background: var(--bg3); padding: 1rem 1.25rem; border-bottom: 1px solid var(--border); }
+
+    .build-card-num {
+      font-family: var(--font-display);
+      font-size: 48px;
+      color: var(--green-dim);
+      line-height: 1;
+      margin-bottom: -8px;
+    }
+
+    .build-card-title { font-family: var(--font-body); font-size: 18px; font-weight: 600; color: var(--text); line-height: 1.2; }
+
+    .build-card-body { padding: 1rem 1.25rem; }
+
+    .build-card-desc { font-family: var(--font-body); font-size: 13px; color: var(--text-dim); line-height: 1.7; margin-bottom: 10px; }
+
+    .build-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+
+    .build-tag { font-size: 9px; padding: 2px 7px; border: 1px solid var(--border); color: var(--text-dim); letter-spacing: 1px; text-transform: uppercase; }
+
+    .build-card-footer {
+      padding: 8px 1.25rem;
+      border-top: 1px solid var(--border);
+      font-size: 10px;
+      color: var(--text-dim);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .build-read { color: var(--green); }
+    .build-read::after { content: ' →'; }
+
+    /* TOOLS */
+    .tools-strip { display: flex; flex-wrap: wrap; gap: 8px; }
+
+    .tool-badge {
+      font-size: 10px;
+      padding: 5px 12px;
+      border: 1px solid var(--border2);
+      color: var(--text-dim);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      background: var(--bg2);
+      transition: color 0.15s, border-color 0.15s;
+    }
+
+    .tool-badge:hover { color: var(--green); border-color: var(--green-dim); }
+
+    /* CONTACT */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+    }
+
+    .contact-cell-dark { background: var(--bg3); padding: 2rem; }
+
+    .contact-cell-dark h2 {
+      font-family: var(--font-display);
+      font-size: 44px;
+      color: var(--green);
+      text-shadow: 0 0 12px var(--green);
+      letter-spacing: 4px;
+      margin-bottom: 0.75rem;
+    }
+
+    .contact-cell-dark p { font-family: var(--font-body); font-size: 13px; color: var(--text-dim); line-height: 1.8; margin-bottom: 1.5rem; }
+
+    .contact-links { display: flex; flex-direction: column; gap: 8px; }
+
+    .contact-link { font-size: 11px; color: var(--text-dim); text-decoration: none; letter-spacing: 2px; text-transform: uppercase; transition: color 0.15s; display: flex; align-items: center; gap: 8px; }
+    .contact-link::before { content: '→'; color: var(--green-dim); }
+    .contact-link:hover { color: var(--green); }
+
+    .contact-cell-light { background: var(--bg2); padding: 2rem; display: flex; flex-direction: column; justify-content: center; gap: 1.5rem; }
+
+    .avail-label { font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--text-dim); margin-bottom: 6px; }
+
+    .avail-status {
+      font-family: var(--font-display);
+      font-size: 28px;
+      color: var(--green);
+      text-shadow: 0 0 6px var(--green);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .avail-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--green); animation: blink 1.4s step-end infinite; box-shadow: 0 0 6px var(--green); }
+
+    .avail-note { font-family: var(--font-body); font-size: 12px; color: var(--text-dim); margin-top: 4px; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">FMSARP</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html#builds">Build Log</a></li>
+    <li><a href="portfolio.html" class="active">Portfolio</a></li>
+    <li><a href="about.html">About</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="status-dot"></div>
+    SYSTEM ONLINE
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div>
+    <p style="font-size:11px; letter-spacing:4px; color:var(--text-dim); text-transform:uppercase; margin-bottom:1rem;"><span style="color:var(--green)">&gt;</span> IT professional &amp; hardware tinkerer</p>
+    <h1>PORTFOLIO</h1>
+    <p class="hero-sub">"I fix things for a living and build things for fun. Here's proof of both."</p>
+  </div>
+  <div class="hero-cta">
+    <a class="btn-primary" href="mailto:hello@fmsarp.com">Get in touch →</a>
+    <a class="btn-secondary" href="index.html#builds">View build log</a>
+  </div>
+</div>
+
+<main>
+
+  <!-- IDENTITY -->
+  <section>
+    <div class="section-header">
+      <span class="section-label">Who I am</span>
+    </div>
+    <div class="identity-strip">
+      <div class="identity-cell">
+        <div class="identity-cell-label">Name</div>
+        <div class="identity-cell-value">Franklin</div>
+        <div class="identity-cell-sub">Based in the US</div>
+      </div>
+      <div class="identity-cell">
+        <div class="identity-cell-label">Role</div>
+        <div class="identity-cell-value">IT Support Pro</div>
+        <div class="identity-cell-sub">Google certified</div>
+      </div>
+      <div class="identity-cell">
+        <div class="identity-cell-label">Also known as</div>
+        <div class="identity-cell-value">The Fix-It Guy</div>
+        <div class="identity-cell-sub">Hardware tinkerer &amp; DIY builder</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section>
+    <div class="section-header">
+      <span class="section-label">Skills</span>
+      <span class="section-header-right">IT &amp; hardware, equally</span>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="skill-card-icon">IT</div>
+        <h3>IT Support</h3>
+        <ul class="skill-list">
+          <li>Hardware troubleshooting</li>
+          <li>OS install &amp; config</li>
+          <li>Network diagnostics</li>
+          <li>Help desk support</li>
+          <li>Active Directory basics</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-icon">NET</div>
+        <h3>Networking</h3>
+        <ul class="skill-list">
+          <li>TCP/IP fundamentals</li>
+          <li>DNS &amp; DHCP config</li>
+          <li>Samba / file sharing</li>
+          <li>VPN setup</li>
+          <li>Home lab networking</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-icon">SYS</div>
+        <h3>Systems</h3>
+        <ul class="skill-list">
+          <li>Linux (daily driver)</li>
+          <li>Windows Server basics</li>
+          <li>Raspberry Pi / SBC</li>
+          <li>Bash scripting</li>
+          <li>Self-hosted services</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-icon">HW</div>
+        <h3>Hardware</h3>
+        <ul class="skill-list">
+          <li>Electronics repair</li>
+          <li>Soldering &amp; PCB work</li>
+          <li>3D printing</li>
+          <li>Keyboard builds</li>
+          <li>Component diagnosis</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-icon">WEB</div>
+        <h3>Web (Learning)</h3>
+        <ul class="skill-list">
+          <li>HTML &amp; CSS</li>
+          <li>GitHub &amp; version control</li>
+          <li>Static site deployment</li>
+          <li>DNS management</li>
+          <li>Node-RED / dashboards</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTS -->
+  <section>
+    <div class="section-header">
+      <span class="section-label">Certifications</span>
+      <span class="section-header-right">Earned &amp; in progress</span>
+    </div>
+    <div class="cert-grid">
+      <div class="cert-card">
+        <div class="cert-badge">G</div>
+        <div class="cert-info">
+          <h3>Google IT Support Certificate</h3>
+          <div class="cert-issuer">Google / Coursera</div>
+          <div class="cert-status earned">&gt; Earned ✓</div>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-badge">AZ</div>
+        <div class="cert-info">
+          <h3>AZ-900 Azure Fundamentals</h3>
+          <div class="cert-issuer">Microsoft</div>
+          <div class="cert-status in-progress">&gt; Exploring...</div>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-badge">A+</div>
+        <div class="cert-info">
+          <h3>CompTIA A+</h3>
+          <div class="cert-issuer">CompTIA</div>
+          <div class="cert-status in-progress">&gt; On the radar</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUILDS -->
+  <section>
+    <div class="section-header">
+      <span class="section-label">Featured builds</span>
+      <span class="section-header-right">Hands-on proof of work</span>
+    </div>
+    <div class="builds-grid">
+      <a class="build-card" href="posts/raspberry-pi-nas.html">
+        <div class="build-card-header">
+          <div class="build-card-num">01</div>
+          <div class="build-card-title">Headless NAS — Raspberry Pi 5</div>
+        </div>
+        <div class="build-card-body">
+          <p class="build-card-desc">4TB RAID 1 NAS with Samba sharing, built from scratch. Covers networking, Linux config, and drive management.</p>
+          <div class="build-tags">
+            <span class="build-tag">Networking</span>
+            <span class="build-tag">Linux</span>
+            <span class="build-tag">Hardware</span>
+          </div>
+        </div>
+        <div class="build-card-footer">
+          <span>Apr 2025</span>
+          <span class="build-read">Read build</span>
+        </div>
+      </a>
+      <a class="build-card" href="posts/laptop-capacitor.html">
+        <div class="build-card-header">
+          <div class="build-card-num">02</div>
+          <div class="build-card-title">Dead Laptop — $4 Capacitor Fix</div>
+        </div>
+        <div class="build-card-body">
+          <p class="build-card-desc">Diagnosed a no-power laptop to a blown cap on the power rail. Fixed for $4 instead of $400.</p>
+          <div class="build-tags">
+            <span class="build-tag">Repair</span>
+            <span class="build-tag">Diagnosis</span>
+            <span class="build-tag">Electronics</span>
+          </div>
+        </div>
+        <div class="build-card-footer">
+          <span>Mar 2025</span>
+          <span class="build-read">Read build</span>
+        </div>
+      </a>
+      <a class="build-card" href="posts/smart-home-dashboard.html">
+        <div class="build-card-header">
+          <div class="build-card-num">03</div>
+          <div class="build-card-title">Smart Home Dashboard — Old iPad</div>
+        </div>
+        <div class="build-card-body">
+          <p class="build-card-desc">Repurposed a 2013 iPad as a wall-mounted smart home dashboard running Node-RED. Zero new hardware.</p>
+          <div class="build-tags">
+            <span class="build-tag">Smarthome</span>
+            <span class="build-tag">Software</span>
+            <span class="build-tag">Repurpose</span>
+          </div>
+        </div>
+        <div class="build-card-footer">
+          <span>Mar 2025</span>
+          <span class="build-read">Read build</span>
+        </div>
+      </a>
+      <a class="build-card" href="posts/mechanical-keyboard.html">
+        <div class="build-card-header">
+          <div class="build-card-num">04</div>
+          <div class="build-card-title">Custom Mechanical Keyboard</div>
+        </div>
+        <div class="build-card-body">
+          <p class="build-card-desc">Hand-wired 65% keyboard with Gateron yellows, QMK firmware, and a walnut wood case.</p>
+          <div class="build-tags">
+            <span class="build-tag">Hardware</span>
+            <span class="build-tag">Firmware</span>
+            <span class="build-tag">Woodworking</span>
+          </div>
+        </div>
+        <div class="build-card-footer">
+          <span>Feb 2025</span>
+          <span class="build-read">Read build</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- TOOLS -->
+  <section>
+    <div class="section-header">
+      <span class="section-label">Tools &amp; technologies</span>
+    </div>
+    <div class="tools-strip">
+      <span class="tool-badge">Linux</span>
+      <span class="tool-badge">Raspberry Pi</span>
+      <span class="tool-badge">Windows</span>
+      <span class="tool-badge">Bash</span>
+      <span class="tool-badge">Samba</span>
+      <span class="tool-badge">Node-RED</span>
+      <span class="tool-badge">Git</span>
+      <span class="tool-badge">HTML / CSS</span>
+      <span class="tool-badge">GitHub Pages</span>
+      <span class="tool-badge">Multimeter</span>
+      <span class="tool-badge">Soldering Iron</span>
+      <span class="tool-badge">3D Printer</span>
+      <span class="tool-badge">QMK Firmware</span>
+      <span class="tool-badge">mdadm / RAID</span>
+      <span class="tool-badge">VirtualBox</span>
+      <span class="tool-badge">VS Code</span>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section>
+    <div class="section-header">
+      <span class="section-label">Contact</span>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-cell-dark">
+        <h2>// TALK</h2>
+        <p>"Job opportunity, collab, or you just bricked something and need help — reach out."</p>
+        <div class="contact-links">
+          <a class="contact-link" href="mailto:hello@fmsarp.com">hello@fmsarp.com</a>
+          <a class="contact-link" href="https://github.com/fmsarp" target="_blank">github.com/fmsarp</a>
+          <a class="contact-link" href="index.html">fmsarp.com</a>
+        </div>
+      </div>
+      <div class="contact-cell-light">
+        <div>
+          <div class="avail-label">Availability</div>
+          <div class="avail-status"><span class="avail-dot"></span> OPEN TO WORK</div>
+          <div class="avail-note">IT support, helpdesk, junior sysadmin roles</div>
+        </div>
+        <div>
+          <div class="avail-label">Response time</div>
+          <div class="avail-status" style="font-size:22px; text-shadow:none; color:var(--text-mid);">Within 24hrs</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <span class="logo">FMSARP</span>
+  <span>Franklin's build log &amp; portfolio &mdash; 2025</span>
+  <span>fmsarp.com</span>
+</footer>
+
+</body>
+</html>
