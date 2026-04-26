@@ -262,7 +262,9 @@ img { max-width: 100%; height: auto; display: block; }
 .post-image img {
   width: 100%;
   max-width: 100%;
-  height: auto;
+  max-height: 480px;
+  object-fit: cover;
+  object-position: center;
   display: block;
 }
 .post-image figcaption {

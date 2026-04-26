@@ -197,7 +197,7 @@
     }
 
     .post-image { margin: 1.5rem 0; border: 1px solid var(--border); border-left: 2px solid var(--green-dim); }
-    .post-image img { width: 100%; max-width: 100%; height: auto; display: block; }
+    .post-image img { width: 100%; max-width: 100%; max-height: 480px; object-fit: cover; object-position: center; display: block; }
     .post-image figcaption { font-size: 11px; color: var(--text-dim); letter-spacing: 2px; text-transform: uppercase; padding: 8px 12px; background: var(--bg3); border-top: 1px solid var(--border); }
     .post-image figcaption::before { content: "// "; color: var(--green); }
     @media (max-width: 768px) {
@@ -209,8 +209,8 @@
       .nav-posts { grid-template-columns: 1fr !important; }
       table { display: block; overflow-x: auto; }
       pre { font-size: 11px; padding: 0.75rem; overflow-x: auto; }
-      .post-image { width: 100%; max-width: 100%; }
-      .post-image img { width: 100%; max-width: 100%; height: auto; }
+      .post-image { width: 100%; max-width: 100%; overflow: hidden; }
+      .post-image img { width: 100%; max-width: 100%; max-height: 220px; object-fit: cover; }
       .post-image { margin-left: 0; margin-right: 0; }
       body { overflow-x: hidden; }
     }
