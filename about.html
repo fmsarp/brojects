@@ -51,15 +51,13 @@
     }
 
     .about-content ul {
+      list-style: none;
       font-family: var(--font-body);
       font-size: 14px;
       color: var(--text-dim);
       line-height: 2.2;
-      padding-left: 0;
       margin-bottom: 1.5rem;
-      list-style: none;
     }
-
     .about-content ul li::before { content: '> '; color: var(--green); }
 
     .contact-block {
@@ -69,7 +67,6 @@
       padding: 1.5rem;
       margin-top: 2rem;
     }
-
     .contact-block h3 {
       font-family: var(--font-display);
       font-size: 28px;
@@ -77,32 +74,24 @@
       letter-spacing: 3px;
       margin-bottom: 0.75rem;
     }
-
     .contact-block p {
       font-family: var(--font-body);
       font-size: 13px;
       color: var(--text-dim);
       line-height: 1.8;
+      margin-bottom: 1rem;
     }
+    .contact-links { display: flex; flex-direction: column; gap: 8px; }
+    .contact-link {
+      font-size: 11px; color: var(--text-dim); text-decoration: none;
+      letter-spacing: 2px; text-transform: uppercase; transition: color 0.15s;
+    }
+    .contact-link::before { content: '→ '; color: var(--green-dim); }
+    .contact-link:hover { color: var(--green); }
 
     @media (max-width: 768px) {
       .page-hero { padding: 2rem 1rem 1.5rem; }
-      main { grid-template-columns: 1fr !important; padding: 1.5rem 1rem 3rem; }
-      aside { border-left: none; border-top: 1px solid var(--border); padding-left: 0; padding-top: 2rem; }
-    }
-
-    @media (max-width: 768px) {
-      .page-hero, .hero, .post-hero { padding: 2rem 1rem 1.5rem !important; grid-template-columns: 1fr !important; }
-      main { grid-template-columns: 1fr !important; padding: 1.5rem 1rem 3rem !important; gap: 1.5rem !important; }
-      .post-content { max-width: 100% !important; }
-      aside { border-left: none !important; border-top: 1px solid var(--border); padding-left: 0 !important; padding-top: 2rem; }
-      .nav-posts { grid-template-columns: 1fr !important; }
-      .parts-table { display: block; overflow-x: auto; }
-      pre { font-size: 11px !important; padding: 0.75rem !important; overflow-x: auto; }
-      .hero-meta, .hero-cta { display: none !important; }
-    }
-    @media (max-width: 480px) {
-      .post-hero h1, h1 { font-size: 48px !important; }
+      main { grid-template-columns: 1fr; padding: 1.5rem 1rem 3rem; gap: 2rem; }
     }
   </style>
 </head>
@@ -123,6 +112,7 @@
     <span></span><span></span><span></span>
   </button>
 </nav>
+
 <div class="nav-mobile-menu" id="mobileMenu">
   <a href="index.html">Home</a>
   <a href="index.html#builds">Build Log</a>
@@ -141,31 +131,25 @@
     <p>Most of what you'll find here sits at the intersection of hardware and software: Raspberry Pis, home networking, keyboard builds, electronics repair, and whatever else I decide to take apart this month.</p>
 
     <h2>// WHY THIS SITE</h2>
-
-    <p>I learn better by doing than by reading. This blog is my public build log — a way to document what I'm working on, share what actually worked, and be honest about what didn't. If something I wrote saves you a Saturday afternoon of debugging, that's a win.</p>
+    <p>I learn better by doing than by reading. This blog is my public build log — a way to document what I'm working on, share what actually worked, and be honest about what didn't.</p>
 
     <h2>// WHAT I'M INTO</h2>
-
     <ul>
       <li>Raspberry Pi &amp; single-board computers</li>
       <li>Home networking &amp; self-hosted services</li>
-      <li>Electronics repair (the art of not buying new things)</li>
+      <li>Electronics repair</li>
       <li>Mechanical keyboards — building, not just buying</li>
       <li>3D printing for functional parts</li>
       <li>Linux, tinkering, and breaking things on purpose</li>
       <li>HTML &amp; CSS (currently learning)</li>
     </ul>
 
-    <h2>// HOW I WRITE</h2>
-
-    <p>Every post is a real build I actually did. I try to be honest about what went wrong, what cost more than expected, and what I'd do differently. These aren't polished tutorials — they're real logs of what happened.</p>
-
     <div class="contact-block">
       <h3>// GET IN TOUCH</h3>
-      <p>Find me on GitHub or drop me an email. I'm not hard to find — just look for the guy with too many USB drives and not enough desk space.</p>
-      <div style="margin-top:1rem; display:flex; flex-direction:column; gap:8px;">
-        <a href="mailto:hello@fmsarp.com" style="font-size:11px; color:var(--text-dim); text-decoration:none; letter-spacing:2px; text-transform:uppercase; transition:color 0.15s;" onmouseover="this.style.color='var(--green)'" onmouseout="this.style.color='var(--text-dim)'">→ hello@fmsarp.com</a>
-        <a href="https://github.com/fmsarp" target="_blank" style="font-size:11px; color:var(--text-dim); text-decoration:none; letter-spacing:2px; text-transform:uppercase; transition:color 0.15s;" onmouseover="this.style.color='var(--green)'" onmouseout="this.style.color='var(--text-dim)'">→ github.com/fmsarp</a>
+      <p>Find me on GitHub or drop me an email.</p>
+      <div class="contact-links">
+        <a class="contact-link" href="mailto:hello@fmsarp.com">hello@fmsarp.com</a>
+        <a class="contact-link" href="https://github.com/fmsarp" target="_blank">github.com/fmsarp</a>
       </div>
     </div>
   </div>
@@ -174,9 +158,7 @@
     <div class="sidebar-block">
       <span class="section-label">Stats</span>
       <div class="stat-grid" style="margin-top:1rem;">
-        <div class="stat-item"><span class="stat-num">5</span><span class="stat-lbl">Builds</span></div>
-        <div class="stat-item"><span class="stat-num">3</span><span class="stat-lbl">Bricks</span></div>
-        <div class="stat-item"><span class="stat-num">2025</span><span class="stat-lbl">Since</span></div>
+        <div class="stat-item"><span class="stat-num">1</span><span class="stat-lbl">Build</span></div>
         <div class="stat-item"><span class="stat-num">∞</span><span class="stat-lbl">Coffee</span></div>
       </div>
     </div>
@@ -187,7 +169,6 @@
         <div class="cmd">&gt; ls ./certs</div>
         <div class="out ok">Google IT Support ✓</div>
         <div class="out">AZ-900 (exploring)</div>
-        <div class="out">CompTIA A+ (radar)</div>
         <div class="cmd">&gt; ls ./skills</div>
         <div class="out ok">Linux / Networking</div>
         <div class="out ok">Hardware repair</div>
@@ -202,9 +183,10 @@
 
 <footer>
   <span class="logo">FMSARP</span>
-  <span>Franklin's build log &mdash; 2025</span>
+  <span>Franklin's build log &mdash; 2026</span>
   <span>fmsarp.com</span>
 </footer>
 
+<script src="js/nav.js"></script>
 </body>
 </html>

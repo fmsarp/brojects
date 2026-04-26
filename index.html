@@ -12,10 +12,6 @@
       max-width: 960px;
       margin: 0 auto;
       border-bottom: 1px solid var(--border);
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 2rem;
-      align-items: end;
     }
 
     .hero-eyebrow { font-size: 11px; letter-spacing: 4px; color: var(--text-dim); text-transform: uppercase; margin-bottom: 1rem; }
@@ -38,29 +34,7 @@
       line-height: 1.7;
       margin-top: 1.25rem;
     }
-
     .hero-sub em { color: var(--amber); font-style: normal; }
-
-    .hero-meta {
-      text-align: right;
-      font-size: 11px;
-      color: var(--text-dim);
-      letter-spacing: 2px;
-      line-height: 2.4;
-      text-transform: uppercase;
-      border-left: 1px solid var(--border2);
-      padding-left: 1.5rem;
-    }
-
-    .hero-meta strong {
-      color: var(--green);
-      display: block;
-      font-family: var(--font-display);
-      font-size: 28px;
-      line-height: 1;
-      letter-spacing: 2px;
-      text-shadow: 0 0 8px var(--green);
-    }
 
     main {
       max-width: 960px;
@@ -72,51 +46,36 @@
       align-items: start;
     }
 
-    /* POST CARDS */
     .post-card {
       display: block;
       text-decoration: none;
       color: inherit;
       background: var(--bg2);
       border: 1px solid var(--border);
-      border-left: 3px solid var(--green-dim);
+      border-left: 3px solid var(--amber);
       padding: 1.25rem 1.5rem;
       margin-bottom: 1rem;
-      transition: border-left-color 0.2s, background 0.2s;
+      transition: filter 0.2s;
     }
-
-    .post-card:hover { border-left-color: var(--green); background: var(--bg3); }
-
-    .post-card.featured { border-left-color: var(--amber); }
-    .post-card.featured:hover { border-left-color: var(--amber); filter: brightness(1.05); }
+    .post-card:hover { filter: brightness(1.1); }
 
     .post-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 8px; }
-
     .post-tag {
-      font-size: 10px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--text-dim);
-      border-right: 1px solid var(--border2);
-      padding-right: 8px;
+      font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+      color: var(--text-dim); border-right: 1px solid var(--border2); padding-right: 8px;
     }
-
     .post-tag:last-child { border-right: none; }
     .post-tag.featured { color: var(--amber); }
     .post-tag.hardware { color: var(--blue); }
-    .post-tag.repair { color: #fb923c; }
-    .post-tag.software { color: #c084fc; }
 
     .post-title {
       font-family: var(--font-body);
       font-size: 20px;
       font-weight: 600;
-      color: var(--text);
+      color: var(--amber);
       margin-bottom: 6px;
       line-height: 1.2;
     }
-
-    .post-card.featured .post-title { color: var(--amber); }
 
     .post-excerpt {
       font-family: var(--font-body);
@@ -133,9 +92,13 @@
       font-size: 11px;
       color: var(--text-dim);
     }
-
     .read-more { color: var(--green); }
     .read-more::after { content: ' →'; }
+
+    @media (max-width: 768px) {
+      .hero { padding: 2rem 1rem 1.5rem; }
+      main { grid-template-columns: 1fr; padding: 1.5rem 1rem 3rem; gap: 2rem; }
+    }
   </style>
 </head>
 <body>
@@ -155,6 +118,7 @@
     <span></span><span></span><span></span>
   </button>
 </nav>
+
 <div class="nav-mobile-menu" id="mobileMenu">
   <a href="index.html" class="active">Home</a>
   <a href="index.html#builds">Build Log</a>
@@ -163,96 +127,36 @@
 
 <div class="ticker">
   <div class="ticker-inner">
-    &nbsp;&nbsp;LATEST BUILD: OpenWrt Router on Pi 5 <span>|</span> WAN + LAN + WIFI + ADGUARD <span>|</span> BRICKS ALONG THE WAY: 2 <span>|</span> UCI OR DIE <span>|</span> SOLDER IRON: HOT <span>|</span> STATUS: TINKERING <span>|</span>&nbsp;
-    &nbsp;&nbsp;LATEST BUILD: OpenWrt Router on Pi 5 <span>|</span> WAN + LAN + WIFI + ADGUARD <span>|</span> BRICKS ALONG THE WAY: 2 <span>|</span> UCI OR DIE <span>|</span> SOLDER IRON: HOT <span>|</span> STATUS: TINKERING <span>|</span>&nbsp;
+    &nbsp;&nbsp;LATEST BUILD: OpenWrt Router on Pi 5 <span>|</span> WAN + LAN + WIFI + ADGUARD <span>|</span> SOLDER IRON: HOT <span>|</span> STATUS: TINKERING <span>|</span> COFFEE: UNCOUNTABLE <span>|</span>&nbsp;
+    &nbsp;&nbsp;LATEST BUILD: OpenWrt Router on Pi 5 <span>|</span> WAN + LAN + WIFI + ADGUARD <span>|</span> SOLDER IRON: HOT <span>|</span> STATUS: TINKERING <span>|</span> COFFEE: UNCOUNTABLE <span>|</span>&nbsp;
   </div>
 </div>
 
 <div class="hero">
-  <div>
-    <p class="hero-eyebrow"><span>&gt;</span> personal build log &mdash; hardware &amp; DIY</p>
-    <h1>FMSARP</h1>
-    <p class="hero-sub">Hardware hacks, DIY experiments, and <em>stuff built with bare hands</em>. No fluff — just builds, breakdowns, and lessons learned the hard way.</p>
-  </div>
-  <div class="hero-meta">
-    <strong>5</strong> builds logged
-    <strong>3</strong> things bricked
-    <strong>∞</strong> coffee consumed
-  </div>
+  <p class="hero-eyebrow"><span>&gt;</span> personal build log &mdash; hardware &amp; DIY</p>
+  <h1>FMSARP</h1>
+  <p class="hero-sub">Hardware hacks, DIY experiments, and <em>stuff built with bare hands</em>. No fluff — just builds, breakdowns, and lessons learned the hard way.</p>
 </div>
 
 <main>
   <div>
     <div class="section-header" id="builds">
       <span class="section-label">Recent builds</span>
-      <span class="section-header-right">5 entries</span>
+      <span class="section-header-right">1 entry</span>
     </div>
 
-    <a class="post-card featured" href="posts/openwrt-router.html">
+    <a class="post-card" href="posts/openwrt-router.html">
       <div class="post-tags">
         <span class="post-tag featured">★ Featured</span>
         <span class="post-tag hardware">Hardware</span>
-        <span class="post-tag">Raspberry Pi</span>
         <span class="post-tag">Networking</span>
         <span class="post-tag">Linux</span>
+        <span class="post-tag">Raspberry Pi</span>
       </div>
       <div class="post-title">Building a Home Router with OpenWrt on a Raspberry Pi 5</div>
       <div class="post-excerpt">I wanted a router I actually controlled. No ISP firmware, no mystery settings, no waiting for someone else to patch a vulnerability. Just a Pi 5, OpenWrt, and full control.</div>
       <div class="post-meta">
         <span>Apr 24, 2026 &mdash; 10 min read</span>
-        <span class="read-more">Read build</span>
-      </div>
-    </a>
-
-    <a class="post-card" href="posts/raspberry-pi-nas.html">
-      <div class="post-tags">
-        <span class="post-tag hardware">Hardware</span>
-        <span class="post-tag">Raspberry Pi</span>
-      </div>
-      <div class="post-title">Building a Headless NAS with a Raspberry Pi 5</div>
-      <div class="post-excerpt">4TB of storage, Samba shares, and automatic backups — all running on a $35 board. Here's how I wired it, configured it, and what I'd do differently next time.</div>
-      <div class="post-meta">
-        <span>Apr 12, 2025 &mdash; 8 min read</span>
-        <span class="read-more">Read build</span>
-      </div>
-    </a>
-
-    <a class="post-card" href="posts/laptop-capacitor.html">
-      <div class="post-tags">
-        <span class="post-tag repair">Repair</span>
-        <span class="post-tag">Electronics</span>
-      </div>
-      <div class="post-title">Reviving a Dead Laptop with a $4 Capacitor</div>
-      <div class="post-excerpt">Everyone said throw it out. I said hold my multimeter. A blown cap on the power rail was all it was.</div>
-      <div class="post-meta">
-        <span>Mar 29, 2025 &mdash; 5 min read</span>
-        <span class="read-more">Read build</span>
-      </div>
-    </a>
-
-    <a class="post-card" href="posts/smart-home-dashboard.html">
-      <div class="post-tags">
-        <span class="post-tag software">Software</span>
-        <span class="post-tag">Smarthome</span>
-      </div>
-      <div class="post-title">DIY Smart Home Dashboard on an Old iPad</div>
-      <div class="post-excerpt">Instead of a $200 smart display, I wall-mounted a 2013 iPad with a Node-RED dashboard. Cost me an afternoon and some double-sided tape.</div>
-      <div class="post-meta">
-        <span>Mar 10, 2025 &mdash; 6 min read</span>
-        <span class="read-more">Read build</span>
-      </div>
-    </a>
-
-    <a class="post-card" href="posts/mechanical-keyboard.html">
-      <div class="post-tags">
-        <span class="post-tag hardware">Hardware</span>
-        <span class="post-tag">Keyboards</span>
-        <span class="post-tag">Woodworking</span>
-      </div>
-      <div class="post-title">Custom Mechanical Keyboard: The Full Build</div>
-      <div class="post-excerpt">Tray-mount 65%, Gateron yellows, hand-wired with QMK firmware. Built the case out of walnut because why not go overboard.</div>
-      <div class="post-meta">
-        <span>Feb 18, 2025 &mdash; 12 min read</span>
         <span class="read-more">Read build</span>
       </div>
     </a>
@@ -263,9 +167,7 @@
       <span class="section-label">About</span>
       <p style="font-family:var(--font-body); font-size:13px; color:var(--text-dim); line-height:1.7; margin-bottom:1rem;">Franklin. IT guy, hardware tinkerer, chronic over-engineer. I break things on purpose so I can figure out how to fix them.</p>
       <div class="stat-grid">
-        <div class="stat-item"><span class="stat-num">5</span><span class="stat-lbl">Builds</span></div>
-        <div class="stat-item"><span class="stat-num">3</span><span class="stat-lbl">Bricks</span></div>
-        <div class="stat-item"><span class="stat-num">2025</span><span class="stat-lbl">Since</span></div>
+        <div class="stat-item"><span class="stat-num">1</span><span class="stat-lbl">Build</span></div>
         <div class="stat-item"><span class="stat-num">∞</span><span class="stat-lbl">Coffee</span></div>
       </div>
     </div>
@@ -275,13 +177,9 @@
       <div class="tag-cloud">
         <span class="tag-pill">Raspberry Pi</span>
         <span class="tag-pill">Networking</span>
-        <span class="tag-pill">Repair</span>
-        <span class="tag-pill">3D Printing</span>
-        <span class="tag-pill">Arduino</span>
         <span class="tag-pill">Linux</span>
-        <span class="tag-pill">Smarthome</span>
-        <span class="tag-pill">Keyboards</span>
-        <span class="tag-pill">Woodworking</span>
+        <span class="tag-pill">OpenWrt</span>
+        <span class="tag-pill">Hardware</span>
       </div>
     </div>
 
@@ -289,23 +187,20 @@
       <span class="section-label">System log</span>
       <div class="terminal-block">
         <div class="cmd">&gt; git log --oneline</div>
-        <a class="out ok" href="posts/openwrt-router.html">f7a91 openwrt router</a><br>
-        <a class="out" href="posts/raspberry-pi-nas.html">a1f3c NAS build v2</a><br>
-        <a class="out" href="posts/laptop-capacitor.html">d8e21 laptop cap fix</a><br>
-        <a class="out" href="posts/smart-home-dashboard.html">9b0fa smart display</a><br>
+        <a class="out ok" href="posts/openwrt-router.html">f7a91 openwrt router</a>
         <div class="cmd">&gt; whoami</div>
         <div class="out ok">franklin @ fmsarp.com</div>
       </div>
     </div>
-
   </aside>
 </main>
 
 <footer>
   <span class="logo">FMSARP</span>
-  <span>Franklin's build log &mdash; 2025</span>
+  <span>Franklin's build log &mdash; 2026</span>
   <span>fmsarp.com</span>
 </footer>
 
+<script src="js/nav.js"></script>
 </body>
 </html>

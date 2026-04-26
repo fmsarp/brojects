@@ -191,60 +191,24 @@
     .toc-list a::before { content: '> '; color: var(--green); }
     .toc-list a:hover { color: var(--green); }
 
-
-    .post-image {
-      margin: 1.5rem 0;
-      border: 1px solid var(--border);
-      border-left: 2px solid var(--green-dim);
-    }
-
-    .post-image img {
-      width: 100%;
-      display: block;
-      max-height: 420px;
-      object-fit: cover;
-      object-position: center;
-    }
-
-    .post-image figcaption {
-      font-size: 11px;
-      color: var(--text-dim);
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      padding: 8px 12px;
-      background: var(--bg3);
-      border-top: 1px solid var(--border);
-    }
-
-    .post-image figcaption::before { content: '// '; color: var(--green); }
     @media (max-width: 768px) {
       .post-layout { grid-template-columns: 1fr; }
       .post-title { font-size: 2rem; }
     }
 
+    .post-image { margin: 1.5rem 0; border: 1px solid var(--border); border-left: 2px solid var(--green-dim); }
+    .post-image img { width: 100%; max-height: 480px; object-fit: cover; object-position: center; }
+    .post-image figcaption { font-size: 11px; color: var(--text-dim); letter-spacing: 2px; text-transform: uppercase; padding: 8px 12px; background: var(--bg3); border-top: 1px solid var(--border); }
+    .post-image figcaption::before { content: "// "; color: var(--green); }
     @media (max-width: 768px) {
       .post-hero { padding: 2rem 1rem 1.5rem; }
-      .post-hero h1 { font-size: 36px; }
-      main { grid-template-columns: 1fr !important; padding: 1.5rem 1rem 3rem; }
+      main { grid-template-columns: 1fr !important; padding: 1.5rem 1rem 3rem; gap: 2rem; }
       .post-content { max-width: 100%; }
       aside { border-left: none; border-top: 1px solid var(--border); padding-left: 0; padding-top: 2rem; }
       .nav-posts { grid-template-columns: 1fr !important; }
-      .parts-table { display: block; overflow-x: auto; }
+      table { display: block; overflow-x: auto; }
       pre { font-size: 11px; padding: 0.75rem; overflow-x: auto; }
-    }
-
-    @media (max-width: 768px) {
-      .page-hero, .hero, .post-hero { padding: 2rem 1rem 1.5rem !important; grid-template-columns: 1fr !important; }
-      main { grid-template-columns: 1fr !important; padding: 1.5rem 1rem 3rem !important; gap: 1.5rem !important; }
-      .post-content { max-width: 100% !important; }
-      aside { border-left: none !important; border-top: 1px solid var(--border); padding-left: 0 !important; padding-top: 2rem; }
-      .nav-posts { grid-template-columns: 1fr !important; }
-      .parts-table { display: block; overflow-x: auto; }
-      pre { font-size: 11px !important; padding: 0.75rem !important; overflow-x: auto; }
-      .hero-meta, .hero-cta { display: none !important; }
-    }
-    @media (max-width: 480px) {
-      .post-hero h1, h1 { font-size: 48px !important; }
+      .post-image img { max-height: 220px; }
     }
   </style>
 </head>
@@ -261,9 +225,7 @@
     <div class="status-dot"></div>
     SYSTEM ONLINE
   </div>
-  <button class="nav-hamburger" onclick="toggleMenu()" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
+  <button class="nav-hamburger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
 <div class="nav-mobile-menu" id="mobileMenu">
   <a href="../index.html">Home</a>
@@ -324,12 +286,12 @@
         </tbody>
       </table>
 
-      <p>The Pi 5 only has one built-in ethernet port, so the USB adapter handles LAN. eth0 faces the modem, eth1 faces everything else.</p>
+      
       <figure class="post-image">
-        <img src="openwrt-case.jpg" alt="Raspberry Pi 5 router in RGB case on desk" loading="lazy">
-        <figcaption>The finished build — Pi 5 in an RGB case, ethernet and USB cables out the back</figcaption>
+        <img src="openwrt-case.jpg" alt="Raspberry Pi 5 in RGB case wired up as router" loading="lazy">
+        <figcaption>The finished build — Pi 5 in an RGB case, ethernet and USB out the back</figcaption>
       </figure>
-
+<p>The Pi 5 only has one built-in ethernet port, so the USB adapter handles LAN. eth0 faces the modem, eth1 faces everything else.</p>
 
       <h2 id="approach">The approach</h2>
 
@@ -344,12 +306,12 @@
 
       <p>Clicked Write, waited for it to finish and verify, then removed the microSD and powered on. OpenWrt booted clean off the NVMe.</p>
 
-
+      
       <figure class="post-image">
-        <img src="openwrt-boot.png" alt="OpenWrt 25.12.2 boot sequence on monitor showing network interfaces coming up" loading="lazy">
+        <img src="openwrt-boot.png" alt="OpenWrt 25.12.2 boot sequence on monitor" loading="lazy">
         <figcaption>OpenWrt boot sequence — network interfaces initialising, link up at 1Gbps</figcaption>
       </figure>
-      <h2 id="network">Configuring WAN and LAN</h2>
+<h2 id="network">Configuring WAN and LAN</h2>
 
       <p>OpenWrt's default config puts eth0 in a LAN bridge with no WAN interface at all. Fresh out of the box it has no internet. With a USB ethernet adapter in the mix, the fix is to reassign the interfaces properly.</p>
 
@@ -520,5 +482,6 @@ service dnsmasq restart</code></pre>
   <span>fmsarp.com</span>
 </footer>
 
+<script src="../js/nav.js"></script>
 </body>
 </html>

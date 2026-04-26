@@ -40,7 +40,7 @@ body::after {
   z-index: 999;
 }
 
-/* NAV */
+/* ── NAV ── */
 nav {
   border-bottom: 1px solid var(--border);
   padding: 0 2rem;
@@ -84,6 +84,48 @@ nav {
   color: var(--text-dim);
 }
 
+/* Hamburger — hidden on desktop */
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px;
+}
+.nav-hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--green);
+}
+
+/* Mobile dropdown */
+.nav-mobile-menu {
+  display: none;
+  position: fixed;
+  top: 52px;
+  left: 0; right: 0;
+  background: var(--bg2);
+  border-bottom: 1px solid var(--border);
+  z-index: 99;
+  flex-direction: column;
+}
+.nav-mobile-menu.open { display: flex; }
+.nav-mobile-menu a {
+  font-size: 13px;
+  color: var(--text-dim);
+  text-decoration: none;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 14px 1.5rem;
+  border-bottom: 1px solid var(--border);
+  transition: color 0.2s;
+}
+.nav-mobile-menu a:last-child { border-bottom: none; }
+.nav-mobile-menu a:hover, .nav-mobile-menu a.active { color: var(--green); }
+
 .status-dot {
   width: 6px; height: 6px;
   border-radius: 50%;
@@ -93,7 +135,7 @@ nav {
 
 @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.15} }
 
-/* TICKER */
+/* ── TICKER ── */
 .ticker {
   border-bottom: 1px solid var(--border);
   padding: 7px 0;
@@ -105,13 +147,11 @@ nav {
   white-space: nowrap;
   overflow: hidden;
 }
-
 .ticker-inner { display: inline-block; animation: scroll-left 32s linear infinite; }
 .ticker-inner span { color: var(--green); margin: 0 12px; }
-
 @keyframes scroll-left { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
-/* SECTION LABEL */
+/* ── LABELS ── */
 .section-label { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: var(--text-dim); }
 .section-label::before { content: '// '; color: var(--green); }
 
@@ -123,10 +163,9 @@ nav {
   padding-bottom: 8px;
   border-bottom: 1px solid var(--border);
 }
-
 .section-header-right { font-size: 10px; color: var(--text-dim); letter-spacing: 1px; }
 
-/* BUTTONS */
+/* ── BUTTONS ── */
 .btn-primary {
   display: inline-block;
   padding: 10px 20px;
@@ -141,7 +180,6 @@ nav {
   cursor: pointer;
   transition: background 0.2s, border-color 0.2s;
 }
-
 .btn-primary:hover { background: var(--green-glow); border-color: var(--green); }
 
 .btn-secondary {
@@ -158,12 +196,10 @@ nav {
   cursor: pointer;
   transition: color 0.2s, border-color 0.2s;
 }
-
 .btn-secondary:hover { color: var(--text); border-color: var(--text-dim); }
 
-/* TAG PILLS */
+/* ── TAGS ── */
 .tag-cloud { display: flex; flex-wrap: wrap; gap: 6px; }
-
 .tag-pill {
   font-size: 10px;
   padding: 3px 9px;
@@ -178,24 +214,36 @@ nav {
   text-decoration: none;
   display: inline-block;
 }
-
 .tag-pill:hover { color: var(--green); border-color: var(--green-dim); }
 
-/* SIDEBAR */
-aside { border-left: 1px solid var(--border); padding-left: 2rem; display: flex; flex-direction: column; gap: 2rem; }
+/* ── SIDEBAR ── */
+aside {
+  border-left: 1px solid var(--border);
+  padding-left: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.sidebar-block .section-label {
+  display: block;
+  margin-bottom: 1rem;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+}
 
-.sidebar-block .section-label { display: block; margin-bottom: 1rem; padding-bottom: 6px; border-bottom: 1px solid var(--border); }
-
-/* STAT GRID */
-.stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); }
-
+/* ── STATS ── */
+.stat-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+}
 .stat-item { background: var(--bg2); padding: 10px; text-align: center; }
-
 .stat-num { font-family: var(--font-display); font-size: 30px; color: var(--green); display: block; line-height: 1; text-shadow: 0 0 6px var(--green); }
-
 .stat-lbl { font-size: 9px; color: var(--text-dim); letter-spacing: 2px; text-transform: uppercase; margin-top: 2px; display: block; }
 
-/* TERMINAL BLOCK */
+/* ── TERMINAL BLOCK ── */
 .terminal-block { font-size: 12px; color: var(--text-dim); line-height: 2; border-left: 2px solid var(--border2); padding-left: 10px; }
 .terminal-block .cmd { color: var(--green); }
 .terminal-block .out { color: var(--text-dim); }
@@ -203,26 +251,20 @@ aside { border-left: 1px solid var(--border); padding-left: 2rem; display: flex;
 .terminal-block a { color: var(--text-dim); text-decoration: none; transition: color 0.15s; }
 .terminal-block a:hover { color: var(--green); }
 
-/* IMAGES */
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
+/* ── IMAGES ── */
+img { max-width: 100%; height: auto; display: block; }
 
 .post-image {
   margin: 1.5rem 0;
   border: 1px solid var(--border);
   border-left: 2px solid var(--green-dim);
 }
-
 .post-image img {
   width: 100%;
   max-height: 480px;
   object-fit: cover;
   object-position: center;
 }
-
 .post-image figcaption {
   font-size: 11px;
   color: var(--text-dim);
@@ -232,10 +274,9 @@ img {
   background: var(--bg3);
   border-top: 1px solid var(--border);
 }
-
 .post-image figcaption::before { content: '// '; color: var(--green); }
 
-/* FOOTER */
+/* ── FOOTER ── */
 footer {
   border-top: 1px solid var(--border);
   padding: 1rem 2rem;
@@ -247,38 +288,19 @@ footer {
   margin-top: 4rem;
   background: var(--bg2);
 }
-
 footer .logo { color: var(--green); font-family: var(--font-display); font-size: 20px; letter-spacing: 3px; }
 
-/* =====================
-   RESPONSIVE / MOBILE
-   ===================== */
-
+/* ══════════════════════════
+   MOBILE
+══════════════════════════ */
 @media (max-width: 768px) {
-
-  /* NAV — hide links, show logo + status only */
   nav { padding: 0 1rem; }
   .nav-links { display: none; }
-  .nav-right { font-size: 10px; }
+  .nav-right { display: none; }
+  .nav-hamburger { display: flex; }
 
-  /* HERO */
-  .hero,
-  .page-hero {
-    padding: 2rem 1rem 1.5rem;
-    grid-template-columns: 1fr !important;
-  }
+  .ticker { font-size: 10px; }
 
-  .hero-meta,
-  .hero-cta { display: none; }
-
-  /* MAIN LAYOUT — stack sidebar below content */
-  main {
-    grid-template-columns: 1fr !important;
-    padding: 1.5rem 1rem 3rem;
-    gap: 2rem;
-  }
-
-  /* SIDEBAR — remove left border when stacked */
   aside {
     border-left: none;
     border-top: 1px solid var(--border);
@@ -286,62 +308,20 @@ footer .logo { color: var(--green); font-family: var(--font-display); font-size:
     padding-top: 2rem;
   }
 
-  /* POST CARDS */
-  .post-card { padding: 1rem; }
+  .stat-grid { grid-template-columns: 1fr 1fr; }
 
-  /* TICKER — slightly smaller */
-  .ticker { font-size: 10px; }
+  .post-image img { max-height: 240px; }
 
-  /* FOOTER — stack vertically */
+  .btn-primary, .btn-secondary {
+    display: block;
+    text-align: center;
+    width: 100%;
+  }
+
   footer {
     flex-direction: column;
     gap: 6px;
     text-align: center;
     padding: 1rem;
   }
-
-  /* IMAGES — full height on mobile */
-  .post-image img { max-height: 260px; }
-
-  /* BUTTONS — full width on mobile */
-  .btn-primary,
-  .btn-secondary {
-    display: block;
-    text-align: center;
-    width: 100%;
-  }
-
-  /* POST HERO */
-  .post-hero { padding: 2rem 1rem 1.5rem; }
-
-  .nav-posts { grid-template-columns: 1fr !important; }
-
-  /* IDENTITY / SKILLS / CERT / CONTACT GRIDS */
-  .identity-strip,
-  .skills-grid,
-  .cert-grid,
-  .builds-grid,
-  .contact-grid { grid-template-columns: 1fr !important; }
-
-  .contact-block { grid-template-columns: 1fr !important; }
-
-  /* STAT GRID — keep 2 cols on mobile, it fits */
-  .stat-grid { grid-template-columns: 1fr 1fr; }
-
-  /* TABLE — allow horizontal scroll */
-  .parts-table { display: block; overflow-x: auto; }
-
-  /* PRE / CODE BLOCKS */
-  pre { font-size: 11px; padding: 1rem; }
-}
-
-@media (max-width: 480px) {
-  .hero h1,
-  .page-hero h1 { font-size: 64px; }
-
-  .post-hero h1 { font-size: 36px !important; }
-
-  nav { height: 46px; }
-
-  .nav-logo { font-size: 24px; }
 }
