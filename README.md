@@ -1,119 +1,44 @@
-# BROJECTS — Franklin's Build Log
+# Fmsarp LLC — Business Website
 
-Personal hardware & DIY blog. Built with plain HTML/CSS, hosted free on GitHub Pages.
+Professional services site for Fmsarp LLC. Plain HTML/CSS/JS, hosted free on GitHub Pages.
 
----
+## Pages
+- `index.html` — Home (hero, services overview, process, why us, CTA)
+- `services.html` — Detailed services + engagement models
+- `about.html` — Company story, values, team
+- `contact.html` — Contact form + details
+- `css/style.css` — Shared styles (light corporate theme)
+- `js/main.js` — Mobile menu + scroll animations
 
-## File Structure
+## IMPORTANT — Before going live
 
-```
-brojects/
-├── index.html              ← Homepage (edit to add new posts here)
-├── about.html              ← About page
-├── css/
-│   └── style.css           ← Shared styles for the whole site
-├── posts/
-│   ├── NEW-POST-TEMPLATE.html   ← Copy this for every new post
-│   ├── raspberry-pi-nas.html
-│   ├── laptop-capacitor.html
-│   ├── smart-home-dashboard.html
-│   └── mechanical-keyboard.html
-└── README.md               ← This file
-```
+### 1. Make the contact form work
+The form uses [Formspree](https://formspree.io) (free tier works on GitHub Pages):
+1. Sign up at formspree.io with hello@fmsarp.com
+2. Create a new form — it gives you an endpoint like `https://formspree.io/f/abcd1234`
+3. In `contact.html`, find `action="https://formspree.io/f/YOUR_FORM_ID"` and replace `YOUR_FORM_ID` with your real ID
 
----
+### 2. Update contact details
+Search and replace across all files if these change:
+- `hello@fmsarp.com` — your real email
+- `github.com/fmsarp` — your real GitHub (or remove)
 
-## How to Deploy (GitHub Pages — Free)
+### 3. Replace the "Partner" placeholder
+In `about.html`, the second team card is a placeholder for your business partner — add their real name, role, and bio.
 
-### First time setup
-
-1. Go to [github.com](https://github.com) and create a free account
-2. Click **New repository** → name it `brojects` → set to **Public** → click **Create**
-3. Upload all these files (drag and drop into the repo, or use GitHub Desktop)
-4. Go to **Settings → Pages**
-5. Under **Source**, select `Deploy from a branch`
-6. Choose `main` branch → `/ (root)` → click **Save**
-7. Wait ~60 seconds → your site is live at:
-   ```
-   https://YOUR-USERNAME.github.io/brojects
-   ```
-
-### Every time you update the site
-
-Just edit a file and upload the updated version to GitHub.
-Or use Git from your terminal:
+## Deploy
+This replaces your existing blog. To deploy over your current repo:
 ```bash
+# in your repo folder, after copying these files in
 git add .
-git commit -m "Added new post"
+git commit -m "Launch Fmsarp LLC business site"
 git push
 ```
+Live at fmsarp.com within ~60 seconds.
 
----
-
-## How to Write a New Post
-
-1. Copy `posts/NEW-POST-TEMPLATE.html`
-2. Rename it: `posts/my-new-build.html`
-3. Open it and edit every section marked `<!-- EDIT -->`
-4. Open `index.html` and add a new post card in the "Recent builds" section:
-
-```html
-<a class="post-card" href="posts/my-new-build.html">
-  <div class="post-tag">
-    <span class="tag">Hardware</span>
-    <span class="tag">Your Tag</span>
-  </div>
-  <div class="post-title">My New Build Title</div>
-  <div class="post-excerpt">Short description of the build.</div>
-  <div class="post-meta">
-    <span>Month DD, 2025 — X min read</span>
-    <span class="read-more">Read build</span>
-  </div>
-</a>
-```
-
-5. Upload both files to GitHub → done.
-
----
-
-## Free CMS Option (Netlify CMS)
-
-If you want a browser-based editor instead of editing HTML by hand:
-
-### Option A: Netlify (easiest)
-1. Go to [netlify.com](https://netlify.com) → sign up free
-2. Drag your project folder into the deploy dropzone
-3. Your site gets a free `.netlify.app` URL
-4. Enable **Netlify CMS** from the dashboard for a simple browser editor
-
-### Option B: Tina CMS (free tier, works with GitHub Pages)
-1. Go to [tina.io](https://tina.io) → connect your GitHub repo
-2. Follow the setup wizard — it adds a `/admin` route to your site
-3. Visit `yoursite.github.io/brojects/admin` to write posts in a visual editor
-
-Both are free for personal use.
-
----
-
-## Custom Domain (Optional)
-
-If you buy a domain (e.g. `brojects.dev` — about $10/year on Namecheap):
-
-1. In your GitHub repo → **Settings → Pages → Custom domain**
-2. Type your domain and click Save
-3. In your domain registrar's DNS settings, add:
-   ```
-   Type: CNAME
-   Name: www
-   Value: YOUR-USERNAME.github.io
-   ```
-4. Wait up to 24 hours for DNS to propagate → your site is live on your domain
-
----
-
-## Editing Tips
-
-- **Add/change tags**: Edit the `<span class="tag">` elements inside `.post-tag`
-- **Featured post**: Add `class="post-card featured"` to any post card on index.html
-- **Update stats**: Edit the numbers in the `<span class="stat-num">` elements
-- **Update ticker**: Edit the text inside `.ticker-inner` in index.html
+## Notes on winning contracts
+To strengthen contract/RFP applications later, consider adding:
+- A **portfolio / case studies** page once you have client work to show
+- **Client testimonials** as you collect them
+- A **capabilities statement** PDF (especially for government contracts — SAM.gov registration is required for US federal work)
+- Specific **certifications** (Microsoft Partner, AWS pricing tier, etc.) as you earn them

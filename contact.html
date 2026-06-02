@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact Fmsarp LLC — tell us about your project, request a quote, or discuss a contract. We typically reply within 24 hours.">
+  <title>Contact — Fmsarp LLC</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .contact-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 3rem; align-items: start; }
+
+    .contact-info p { font-size: 16px; color: var(--slate); margin-bottom: 2rem; }
+
+    .contact-method { display: flex; gap: 1rem; padding: 1.25rem 0; border-bottom: 1px solid var(--line); }
+    .contact-method .ico { width: 42px; height: 42px; border-radius: 10px; background: var(--accent-soft); color: var(--accent); display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+    .contact-method .k { font-family: var(--font-mono); font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: var(--slate2); }
+    .contact-method .v { font-size: 15px; font-weight: 600; }
+    .contact-method a.v { color: var(--accent); }
+
+    .form-card { background: var(--paper2); border: 1px solid var(--line); border-radius: 18px; padding: 2.5rem; }
+
+    .field { margin-bottom: 1.25rem; }
+    .field label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 0.5rem; font-family: var(--font-mono); letter-spacing: 0.5px; }
+    .field input, .field select, .field textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid var(--line2);
+      border-radius: 10px;
+      font-family: var(--font-body);
+      font-size: 15px;
+      background: var(--paper);
+      color: var(--ink);
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .field input:focus, .field select:focus, .field textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px var(--accent-soft);
+    }
+    .field textarea { resize: vertical; min-height: 130px; }
+    .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+    .form-card .btn { width: 100%; justify-content: center; margin-top: 0.5rem; }
+    .form-note { font-size: 12.5px; color: var(--slate2); margin-top: 1rem; text-align: center; font-family: var(--font-mono); }
+
+    @media (max-width: 760px) {
+      .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .field-row { grid-template-columns: 1fr; }
+      .form-card { padding: 1.75rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <a class="logo" href="index.html"><span class="logo-mark"></span> Fmsarp</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+      <li><a href="contact.html" class="nav-cta">Get a quote</a></li>
+    </ul>
+    <button class="nav-burger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="contact.html">Get a quote</a>
+  </div>
+</header>
+
+<div class="page-head">
+  <div class="hero-bg"></div>
+  <div class="wrap">
+    <div class="eyebrow">// Contact</div>
+    <h1>Tell us what you're building.</h1>
+    <p>Whether it's a quick question, a project, or a contract opportunity — drop us a message and we'll get back to you, usually within 24 hours.</p>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <p>Prefer to reach out directly? Use any of the channels below. For project inquiries, the form gives us the detail we need to respond well.</p>
+
+        <div class="contact-method">
+          <div class="ico">✉</div>
+          <div>
+            <div class="k">Email</div>
+            <a class="v" href="mailto:hello@fmsarp.com">hello@fmsarp.com</a>
+          </div>
+        </div>
+        <div class="contact-method">
+          <div class="ico">⌗</div>
+          <div>
+            <div class="k">GitHub</div>
+            <a class="v" href="https://github.com/fmsarp" target="_blank">github.com/fmsarp</a>
+          </div>
+        </div>
+        <div class="contact-method">
+          <div class="ico">◷</div>
+          <div>
+            <div class="k">Response time</div>
+            <div class="v">Within 24 hours</div>
+          </div>
+        </div>
+        <div class="contact-method">
+          <div class="ico">🌍</div>
+          <div>
+            <div class="k">Working hours</div>
+            <div class="v">Remote · all time zones</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-card reveal">
+        <!-- IMPORTANT: replace the action URL with your own Formspree endpoint (see README) -->
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <div class="field-row">
+            <div class="field">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required placeholder="Your name">
+            </div>
+            <div class="field">
+              <label for="company">Company</label>
+              <input type="text" id="company" name="company" placeholder="Optional">
+            </div>
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required placeholder="you@company.com">
+          </div>
+          <div class="field">
+            <label for="service">What do you need?</label>
+            <select id="service" name="service">
+              <option>Web Development</option>
+              <option>Cloud Services</option>
+              <option>Managed IT &amp; Support</option>
+              <option>Security &amp; Compliance</option>
+              <option>Website Management</option>
+              <option>Migration / Setup</option>
+              <option>A contract / RFP</option>
+              <option>Not sure yet</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="message">Project details</label>
+            <textarea id="message" name="message" required placeholder="Tell us a bit about what you're looking to do, your timeline, and anything else that helps."></textarea>
+          </div>
+          <button type="submit" class="btn btn-dark">Send message →</button>
+          <p class="form-note">We'll never share your information. No spam, ever.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="logo" href="index.html"><span class="logo-mark"></span> Fmsarp</a>
+        <p>Web development, cloud, and managed IT services for businesses worldwide. Built and operated by Fmsarp LLC.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <a href="services.html">Web Development</a>
+        <a href="services.html">Cloud Services</a>
+        <a href="services.html">Managed IT</a>
+        <a href="services.html">Website Management</a>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="contact.html">Get a quote</a>
+      </div>
+      <div class="footer-col">
+        <h5>Connect</h5>
+        <a href="mailto:hello@fmsarp.com">hello@fmsarp.com</a>
+        <a href="https://github.com/fmsarp" target="_blank">GitHub</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Fmsarp LLC. All rights reserved.</span>
+      <div class="badges">
+        <span class="badge">US-Registered LLC</span>
+        <span class="badge">Remote-First</span>
+        <span class="badge">Global Delivery</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

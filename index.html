@@ -1,285 +1,242 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="FMSARP — Franklin's hardware, DIY, and IT build log."
-    />
-    <meta
-      name="facebook-domain-verification"
-      content="s8z8a5xo2f5ztdnm5dwgj8vxszmf28"
-    />
-    <title>FMSARP — Build Log</title>
-    <link rel="stylesheet" href="css/style.css" />
-    <style>
-      .hero {
-        padding: 4rem 2rem 3rem;
-        max-width: 960px;
-        margin: 0 auto;
-        border-bottom: 1px solid var(--border);
-      }
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Fmsarp LLC — web development, IT support, and cloud services for businesses worldwide. We build, manage, and secure the systems your business runs on.">
+  <title>Fmsarp LLC — Web Development, IT & Cloud Services</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
 
-      .hero-eyebrow {
-        font-size: 11px;
-        letter-spacing: 4px;
-        color: var(--text-dim);
-        text-transform: uppercase;
-        margin-bottom: 1rem;
-      }
-      .hero-eyebrow span {
-        color: var(--green);
-      }
+<header>
+  <nav class="nav">
+    <a class="logo" href="index.html"><span class="logo-mark"></span> Fmsarp</a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="contact.html" class="nav-cta">Get a quote</a></li>
+    </ul>
+    <button class="nav-burger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="contact.html">Get a quote</a>
+  </div>
+</header>
 
-      .hero h1 {
-        font-family: var(--font-display);
-        font-size: clamp(64px, 14vw, 110px);
-        color: var(--green);
-        text-shadow: 0 0 24px var(--green);
-        line-height: 0.9;
-        letter-spacing: 6px;
-      }
-
-      .hero-sub {
-        font-family: var(--font-body);
-        font-size: 15px;
-        color: var(--text-dim);
-        max-width: 460px;
-        line-height: 1.7;
-        margin-top: 1.25rem;
-      }
-      .hero-sub em {
-        color: var(--amber);
-        font-style: normal;
-      }
-
-      main {
-        max-width: 960px;
-        margin: 0 auto;
-        padding: 2.5rem 2rem 4rem;
-        display: grid;
-        grid-template-columns: 1fr 260px;
-        gap: 2.5rem;
-        align-items: start;
-      }
-
-      .post-card {
-        display: block;
-        text-decoration: none;
-        color: inherit;
-        background: var(--bg2);
-        border: 1px solid var(--border);
-        border-left: 3px solid var(--amber);
-        padding: 1.25rem 1.5rem;
-        margin-bottom: 1rem;
-        transition: filter 0.2s;
-      }
-      .post-card:hover {
-        filter: brightness(1.1);
-      }
-
-      .post-tags {
-        display: flex;
-        gap: 8px;
-        flex-wrap: wrap;
-        margin-bottom: 8px;
-      }
-      .post-tag {
-        font-size: 10px;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        color: var(--text-dim);
-        border-right: 1px solid var(--border2);
-        padding-right: 8px;
-      }
-      .post-tag:last-child {
-        border-right: none;
-      }
-      .post-tag.featured {
-        color: var(--amber);
-      }
-      .post-tag.hardware {
-        color: var(--blue);
-      }
-
-      .post-title {
-        font-family: var(--font-body);
-        font-size: 20px;
-        font-weight: 600;
-        color: var(--amber);
-        margin-bottom: 6px;
-        line-height: 1.2;
-      }
-
-      .post-excerpt {
-        font-family: var(--font-body);
-        font-size: 13px;
-        color: var(--text-dim);
-        line-height: 1.6;
-        margin-bottom: 12px;
-      }
-
-      .post-meta {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        font-size: 11px;
-        color: var(--text-dim);
-      }
-      .read-more {
-        color: var(--green);
-      }
-      .read-more::after {
-        content: " →";
-      }
-
-      @media (max-width: 768px) {
-        .hero {
-          padding: 2rem 1rem 1.5rem;
-        }
-        main {
-          grid-template-columns: 1fr;
-          padding: 1.5rem 1rem 3rem;
-          gap: 2rem;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <nav>
-      <a class="nav-logo" href="index.html">FMSARP</a>
-      <ul class="nav-links">
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="index.html#builds">Build Log</a></li>
-        <li><a href="about.html">About</a></li>
-      </ul>
-      <div class="nav-right">
-        <div class="status-dot"></div>
-        SYSTEM ONLINE
-      </div>
-      <button class="nav-hamburger" onclick="toggleMenu()" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
-    </nav>
-
-    <div class="nav-mobile-menu" id="mobileMenu">
-      <a href="index.html" class="active">Home</a>
-      <a href="index.html#builds">Build Log</a>
-      <a href="about.html">About</a>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="wrap">
+    <div class="hero-badge"><span class="dot"></span> Available for new projects &amp; contracts</div>
+    <h1>The technology partner your business <span class="grad">actually owns</span>.</h1>
+    <p class="hero-sub">Fmsarp LLC builds, manages, and secures the systems companies run on — from custom web platforms to cloud infrastructure and day-to-day IT support. One team, accountable end to end.</p>
+    <div class="hero-actions">
+      <a href="contact.html" class="btn btn-dark">Start a project →</a>
+      <a href="services.html" class="btn btn-ghost">Explore services</a>
     </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="num">100%</div><div class="lbl">Owner-operated</div></div>
+      <div class="hero-stat"><div class="num">24/7</div><div class="lbl">Monitoring available</div></div>
+      <div class="hero-stat"><div class="num">Global</div><div class="lbl">Remote-first delivery</div></div>
+    </div>
+  </div>
+</section>
 
-    <div class="ticker">
-      <div class="ticker-inner">
-        &nbsp;&nbsp;LATEST BUILD: OpenWrt Router on Pi 5 <span>|</span> WAN +
-        LAN + WIFI + ADGUARD <span>|</span> SOLDER IRON: HOT
-        <span>|</span> STATUS: TINKERING <span>|</span> COFFEE: UNCOUNTABLE
-        <span>|</span>&nbsp; &nbsp;&nbsp;LATEST BUILD: OpenWrt Router on Pi 5
-        <span>|</span> WAN + LAN + WIFI + ADGUARD <span>|</span> SOLDER IRON:
-        HOT <span>|</span> STATUS: TINKERING <span>|</span> COFFEE: UNCOUNTABLE
-        <span>|</span>&nbsp;
+<!-- SERVICES -->
+<section class="services">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">// What we do</div>
+      <h2 class="section-title">Full-stack capability, one accountable team.</h2>
+      <p class="section-lead">We cover the whole lifecycle — design and build, deploy and host, then monitor and maintain. No hand-offs, no finger-pointing.</p>
+    </div>
+    <div class="service-grid">
+      <div class="service-card reveal">
+        <div class="service-icon">⌘</div>
+        <h3>Web Development</h3>
+        <p>Custom websites and web apps built to perform, scale, and convert.</p>
+        <ul class="service-list">
+          <li>Business sites &amp; landing pages</li>
+          <li>Web apps &amp; dashboards</li>
+          <li>E-commerce &amp; payments</li>
+          <li>CMS &amp; headless builds</li>
+        </ul>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">☁</div>
+        <h3>Cloud Services</h3>
+        <p>Architecture, migration, and management on AWS, Azure, and GCP.</p>
+        <ul class="service-list">
+          <li>Cloud migration &amp; setup</li>
+          <li>Infrastructure as code</li>
+          <li>Backups &amp; disaster recovery</li>
+          <li>Cost optimization</li>
+        </ul>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">⚙</div>
+        <h3>Managed IT &amp; Support</h3>
+        <p>Reliable day-to-day IT so your team can focus on the business.</p>
+        <ul class="service-list">
+          <li>Microsoft 365 administration</li>
+          <li>Help desk &amp; user support</li>
+          <li>Device &amp; network management</li>
+          <li>Email &amp; DNS configuration</li>
+        </ul>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">🔒</div>
+        <h3>Security &amp; Compliance</h3>
+        <p>Practical security that protects your data and your reputation.</p>
+        <ul class="service-list">
+          <li>Security assessments</li>
+          <li>Email deliverability &amp; SPF/DKIM</li>
+          <li>Access &amp; identity management</li>
+          <li>Monitoring &amp; alerting</li>
+        </ul>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">⟳</div>
+        <h3>Website Management</h3>
+        <p>Ongoing care plans that keep sites fast, updated, and online.</p>
+        <ul class="service-list">
+          <li>Updates &amp; maintenance</li>
+          <li>Performance &amp; uptime monitoring</li>
+          <li>Content updates</li>
+          <li>Hosting &amp; domain management</li>
+        </ul>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">⎘</div>
+        <h3>Migrations &amp; Setup</h3>
+        <p>Smooth transitions to new platforms, hosts, or providers.</p>
+        <ul class="service-list">
+          <li>Email &amp; tenant migrations</li>
+          <li>Hosting &amp; platform moves</li>
+          <li>Data migration</li>
+          <li>New office IT setup</li>
+        </ul>
       </div>
     </div>
+  </div>
+</section>
 
-    <div class="hero">
-      <p class="hero-eyebrow">
-        <span>&gt;</span> personal build log &mdash; hardware &amp; DIY
-      </p>
-      <h1>FMSARP</h1>
-      <p class="hero-sub">
-        Hardware hacks, DIY experiments, and
-        <em>stuff built with bare hands</em>. No fluff — just builds,
-        breakdowns, and lessons learned the hard way.
-      </p>
+<!-- PROCESS -->
+<section>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">// How we work</div>
+      <h2 class="section-title">A clear process, fixed scope, no surprises.</h2>
     </div>
-
-    <main>
-      <div>
-        <div class="section-header" id="builds">
-          <span class="section-label">Recent builds</span>
-          <span class="section-header-right">1 entry</span>
-        </div>
-
-        <a class="post-card" href="posts/openwrt-router.html">
-          <div class="post-tags">
-            <span class="post-tag featured">★ Featured</span>
-            <span class="post-tag hardware">Hardware</span>
-            <span class="post-tag">Networking</span>
-            <span class="post-tag">Linux</span>
-            <span class="post-tag">Raspberry Pi</span>
-          </div>
-          <div class="post-title">
-            Building a Home Router with OpenWrt on a Raspberry Pi 5
-          </div>
-          <div class="post-excerpt">
-            I wanted a router I actually controlled. No ISP firmware, no mystery
-            settings, no waiting for someone else to patch a vulnerability. Just
-            a Pi 5, OpenWrt, and full control.
-          </div>
-          <div class="post-meta">
-            <span>Apr 24, 2026 &mdash; 10 min read</span>
-            <span class="read-more">Read build</span>
-          </div>
-        </a>
+    <div class="process-grid">
+      <div class="process-step reveal">
+        <h4>Discover</h4>
+        <p>We learn your goals, constraints, and current setup, then define a clear scope and fixed quote.</p>
       </div>
+      <div class="process-step reveal">
+        <h4>Build</h4>
+        <p>We design and develop in the open, sharing progress so you always know where things stand.</p>
+      </div>
+      <div class="process-step reveal">
+        <h4>Deploy</h4>
+        <p>We launch, configure hosting and infrastructure, and verify everything works as promised.</p>
+      </div>
+      <div class="process-step reveal">
+        <h4>Maintain</h4>
+        <p>Optional care plans keep your systems secure, updated, and monitored long after launch.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-      <aside>
-        <div class="sidebar-block">
-          <span class="section-label">About</span>
-          <p
-            style="
-              font-family: var(--font-body);
-              font-size: 13px;
-              color: var(--text-dim);
-              line-height: 1.7;
-              margin-bottom: 1rem;
-            "
-          >
-            Franklin. IT guy, hardware tinkerer, chronic over-engineer. I break
-            things on purpose so I can figure out how to fix them.
-          </p>
-          <div class="stat-grid">
-            <div class="stat-item">
-              <span class="stat-num">1</span><span class="stat-lbl">Build</span>
-            </div>
-            <div class="stat-item">
-              <span class="stat-num">∞</span
-              ><span class="stat-lbl">Coffee</span>
-            </div>
-          </div>
-        </div>
+<!-- WHY -->
+<section class="why">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">// Why Fmsarp</div>
+      <h2 class="section-title">Big-firm capability. Small-team accountability.</h2>
+      <p class="section-lead">You work directly with the people doing the work — not an account manager and a chain of subcontractors.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-item reveal">
+        <div class="ico">🎯</div>
+        <h4>Fixed-scope pricing</h4>
+        <p>You know what you're paying before we start. No surprise invoices, no scope creep.</p>
+      </div>
+      <div class="why-item reveal">
+        <div class="ico">🌍</div>
+        <h4>Remote-first, global</h4>
+        <p>US-based with international reach. We work across time zones and deliver remotely.</p>
+      </div>
+      <div class="why-item reveal">
+        <div class="ico">🛠</div>
+        <h4>Hands-on expertise</h4>
+        <p>Real engineers who build and run infrastructure daily — not just resell it.</p>
+      </div>
+      <div class="why-item reveal">
+        <div class="ico">🤝</div>
+        <h4>Long-term partner</h4>
+        <p>We're here after launch with care plans, support, and a number you can actually reach.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-        <div class="sidebar-block">
-          <span class="section-label">Topics</span>
-          <div class="tag-cloud">
-            <span class="tag-pill">Raspberry Pi</span>
-            <span class="tag-pill">Networking</span>
-            <span class="tag-pill">Linux</span>
-            <span class="tag-pill">OpenWrt</span>
-            <span class="tag-pill">Hardware</span>
-          </div>
-        </div>
+<!-- CTA -->
+<section>
+  <div class="wrap">
+    <div class="cta-banner reveal">
+      <h2>Let's build something that lasts.</h2>
+      <p>Tell us what you're working on. We'll get back to you with honest advice and a clear path forward — usually within 24 hours.</p>
+      <a href="contact.html" class="btn btn-dark">Get in touch →</a>
+    </div>
+  </div>
+</section>
 
-        <div class="sidebar-block">
-          <span class="section-label">System log</span>
-          <div class="terminal-block">
-            <div class="cmd">&gt; git log --oneline</div>
-            <a class="out ok" href="posts/openwrt-router.html"
-              >f7a91 openwrt router</a
-            >
-            <div class="cmd">&gt; whoami</div>
-            <div class="out ok">franklin @ fmsarp.com</div>
-          </div>
-        </div>
-      </aside>
-    </main>
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="logo" href="index.html"><span class="logo-mark"></span> Fmsarp</a>
+        <p>Web development, cloud, and managed IT services for businesses worldwide. Built and operated by Fmsarp LLC.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <a href="services.html">Web Development</a>
+        <a href="services.html">Cloud Services</a>
+        <a href="services.html">Managed IT</a>
+        <a href="services.html">Website Management</a>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="contact.html">Get a quote</a>
+      </div>
+      <div class="footer-col">
+        <h5>Connect</h5>
+        <a href="mailto:hello@fmsarp.com">hello@fmsarp.com</a>
+        <a href="https://github.com/fmsarp" target="_blank">GitHub</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Fmsarp LLC. All rights reserved.</span>
+      <div class="badges">
+        <span class="badge">US-Registered LLC</span>
+        <span class="badge">Remote-First</span>
+        <span class="badge">Global Delivery</span>
+      </div>
+    </div>
+  </div>
+</footer>
 
-    <footer>
-      <span class="logo">FMSARP</span>
-      <span>Franklin's build log &mdash; 2026</span>
-      <span>fmsarp.com</span>
-    </footer>
-
-    <script src="js/nav.js"></script>
-  </body>
+<script src="js/main.js"></script>
+</body>
 </html>
