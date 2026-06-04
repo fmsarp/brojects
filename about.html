@@ -3,51 +3,43 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="About Fmsarp LLC — a US-registered, remote-first technology company delivering web, cloud, and IT services worldwide.">
+  <meta name="description" content="About Fmsarp LLC — a US-registered, remote-first engineering firm delivering web, cloud, and IT services worldwide.">
   <title>About — Fmsarp LLC</title>
   <link rel="stylesheet" href="css/style.css">
   <style>
-    .about-intro { display: grid; grid-template-columns: 1.4fr 1fr; gap: 3rem; align-items: start; padding-bottom: 3rem; }
-    .about-intro p { font-size: 17px; color: var(--slate); margin-bottom: 1.25rem; }
-    .about-intro p.lead { font-size: 21px; color: var(--ink); font-weight: 500; line-height: 1.5; }
-
-    .about-side { background: var(--paper2); border: 1px solid var(--line); border-radius: 16px; padding: 1.75rem; }
-    .about-side h4 { font-family: var(--font-mono); font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: var(--slate2); margin-bottom: 1rem; }
+    .about-intro { display: grid; grid-template-columns: 1.4fr 1fr; gap: 3rem; align-items: start; padding-bottom: 3.5rem; }
+    .about-intro p { font-size: 16px; color: var(--fg2); margin-bottom: 1.25rem; }
+    .about-intro p.lead { font-size: 21px; color: var(--fg); font-weight: 500; line-height: 1.5; }
+    .about-side { background: var(--bg2); border: 1px solid var(--line); border-radius: 12px; padding: 1.75rem; }
+    .about-side h4 { font-family: var(--font-mono); font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: var(--fg3); margin-bottom: 1rem; }
     .about-fact { padding: 0.85rem 0; border-bottom: 1px solid var(--line); }
     .about-fact:last-child { border-bottom: none; }
-    .about-fact .k { font-size: 13px; color: var(--slate2); font-family: var(--font-mono); }
-    .about-fact .v { font-size: 15px; font-weight: 600; }
-
-    .values { background: var(--paper2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .about-fact .k { font-size: 12px; color: var(--fg3); font-family: var(--font-mono); }
+    .about-fact .v { font-size: 15px; font-weight: 600; color: var(--white); }
     .values-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
-    .value-card { background: var(--paper); border: 1px solid var(--line); border-radius: 14px; padding: 1.75rem; }
-    .value-card .n { font-family: var(--font-mono); font-size: 13px; color: var(--accent); margin-bottom: 0.75rem; }
-    .value-card h4 { font-family: var(--font-display); font-weight: 600; font-size: 19px; margin-bottom: 0.5rem; }
-    .value-card p { font-size: 14.5px; color: var(--slate); }
-
+    .value-card { background: var(--bg2); border: 1px solid var(--line); border-radius: 12px; padding: 1.75rem; }
+    .value-card .n { font-family: var(--font-mono); font-size: 13px; color: var(--steel); margin-bottom: 0.75rem; }
+    .value-card h4 { font-family: var(--font-display); font-weight: 700; font-size: 19px; margin-bottom: 0.5rem; color: var(--white); }
+    .value-card p { font-size: 14.5px; color: var(--fg2); }
     .team-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-    .team-card { border: 1px solid var(--line); border-radius: 16px; padding: 2rem; }
-    .team-avatar { width: 56px; height: 56px; border-radius: 12px; background: var(--ink); color: #fff; display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-weight: 700; font-size: 22px; margin-bottom: 1rem; }
-    .team-card h4 { font-family: var(--font-display); font-weight: 700; font-size: 20px; }
-    .team-card .role { font-family: var(--font-mono); font-size: 13px; color: var(--accent); margin-bottom: 0.75rem; }
-    .team-card p { font-size: 14.5px; color: var(--slate); }
-
-    @media (max-width: 760px) {
-      .about-intro { grid-template-columns: 1fr; gap: 2rem; }
-      .team-grid { grid-template-columns: 1fr; }
-    }
+    .team-card { border: 1px solid var(--line); border-radius: 12px; padding: 2rem; background: var(--bg2); }
+    .team-avatar { width: 56px; height: 56px; border-radius: 10px; border: 1px solid var(--steel); color: var(--steel-bright); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-weight: 800; font-size: 22px; margin-bottom: 1rem; }
+    .team-card h4 { font-family: var(--font-display); font-weight: 700; font-size: 20px; color: var(--white); }
+    .team-card .role { font-family: var(--font-mono); font-size: 13px; color: var(--steel-bright); margin-bottom: 0.75rem; }
+    .team-card p { font-size: 14.5px; color: var(--fg2); }
+    @media (max-width: 760px) { .about-intro { grid-template-columns: 1fr; gap: 2rem; } .team-grid { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
 
 <header>
   <nav class="nav">
-    <a class="logo" href="index.html"><span class="logo-mark"></span> Fmsarp</a>
+    <a class="logo" href="index.html"><span class="logo-mark"></span> FMSARP</a>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="services.html">Services</a></li>
+      <li><a href="work.html">Work</a></li>
       <li><a href="about.html" class="active">About</a></li>
-      <li><a href="contact.html">Contact</a></li>
       <li><a href="contact.html" class="nav-cta">Get a quote</a></li>
     </ul>
     <button class="nav-burger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
@@ -55,18 +47,19 @@
   <div class="mobile-menu" id="mobileMenu">
     <a href="index.html">Home</a>
     <a href="services.html">Services</a>
+    <a href="work.html">Work</a>
     <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
     <a href="contact.html">Get a quote</a>
   </div>
 </header>
 
 <div class="page-head">
   <div class="hero-bg"></div>
+  <div class="hero-glow"></div>
   <div class="wrap">
-    <div class="eyebrow">// About</div>
-    <h1>A small team that takes ownership seriously.</h1>
-    <p>Fmsarp LLC is a remote-first technology company built on a simple idea: businesses deserve a technology partner who actually answers the phone.</p>
+    <div class="eyebrow">About</div>
+    <h1>A small firm that takes ownership seriously.</h1>
+    <p>Fmsarp LLC is a remote-first engineering company built on a simple idea: businesses deserve a technology partner who actually answers the phone.</p>
   </div>
 </div>
 
@@ -74,8 +67,8 @@
   <div class="wrap">
     <div class="about-intro reveal">
       <div>
-        <p class="lead">We started Fmsarp because we kept seeing the same thing: businesses stuck between freelancers who disappear and big agencies that overcharge and under-communicate.</p>
-        <p>We do things differently. When you work with us, you work directly with the engineers building and running your systems. No layers, no runaround — just people who care about doing the work well and standing behind it.</p>
+        <p class="lead">We started Fmsarp because we kept seeing the same thing — businesses stuck between freelancers who disappear and big agencies that overcharge and under-communicate.</p>
+        <p>We do it differently. When you work with us, you work directly with the engineers building and running your systems. No layers, no runaround — just people who care about doing the work well and standing behind it.</p>
         <p>From custom web platforms to cloud infrastructure to the everyday IT that keeps an office running, we bring real hands-on experience across the full stack. We're US-based with international reach, delivering remotely to clients wherever they are.</p>
         <p>We're equally comfortable taking on a quick fixed-scope project or becoming the long-term technology partner you call first.</p>
       </div>
@@ -91,31 +84,30 @@
   </div>
 </section>
 
-<!-- VALUES -->
-<section class="values">
+<section class="services">
   <div class="wrap">
     <div class="section-head reveal">
-      <div class="eyebrow">// What we stand for</div>
-      <h2 class="section-title">Principles we don't compromise on.</h2>
+      <div class="eyebrow">Principles</div>
+      <h2 class="section-title">What we don't compromise on.</h2>
     </div>
     <div class="values-grid">
       <div class="value-card reveal">
-        <div class="n">01</div>
+        <div class="n">// 01</div>
         <h4>Honesty first</h4>
         <p>We tell you what you need, not what's most profitable for us — even when that means a smaller invoice.</p>
       </div>
       <div class="value-card reveal">
-        <div class="n">02</div>
+        <div class="n">// 02</div>
         <h4>Own the outcome</h4>
         <p>We don't hand off and disappear. If it has our name on it, we make sure it works and keeps working.</p>
       </div>
       <div class="value-card reveal">
-        <div class="n">03</div>
+        <div class="n">// 03</div>
         <h4>Clear communication</h4>
         <p>No jargon walls, no silence. You'll always know what's happening and what comes next.</p>
       </div>
       <div class="value-card reveal">
-        <div class="n">04</div>
+        <div class="n">// 04</div>
         <h4>Build to last</h4>
         <p>We favor solutions that are maintainable, documented, and yours — not locked to us forever.</p>
       </div>
@@ -123,13 +115,12 @@
   </div>
 </section>
 
-<!-- TEAM -->
 <section>
   <div class="wrap">
     <div class="section-head reveal">
-      <div class="eyebrow">// The team</div>
+      <div class="eyebrow">The team</div>
       <h2 class="section-title">The people behind the work.</h2>
-      <p class="section-lead">A focused two-person team with complementary strengths across development, infrastructure, and IT operations.</p>
+      <p class="section-lead">A focused team with complementary strengths across development, infrastructure, and IT operations.</p>
     </div>
     <div class="team-grid">
       <div class="team-card reveal">
@@ -148,13 +139,13 @@
   </div>
 </section>
 
-<!-- CTA -->
 <section>
   <div class="wrap">
     <div class="cta-banner reveal">
+      <div class="hero-glow"></div>
       <h2>Let's work together.</h2>
       <p>Have a project, a problem, or a contract in mind? We'd love to hear about it.</p>
-      <a href="contact.html" class="btn btn-dark">Get in touch →</a>
+      <a href="contact.html" class="btn btn-primary">Get in touch →</a>
     </div>
   </div>
 </section>
@@ -163,21 +154,21 @@
   <div class="wrap">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a class="logo" href="index.html"><span class="logo-mark"></span> Fmsarp</a>
-        <p>Web development, cloud, and managed IT services for businesses worldwide. Built and operated by Fmsarp LLC.</p>
+        <a class="logo" href="index.html"><span class="logo-mark"></span> FMSARP</a>
+        <p>Web, cloud, and managed IT engineering for businesses worldwide. Built and operated by Fmsarp LLC.</p>
       </div>
       <div class="footer-col">
         <h5>Services</h5>
         <a href="services.html">Web Development</a>
-        <a href="services.html">Cloud Services</a>
+        <a href="services.html">Cloud Infrastructure</a>
         <a href="services.html">Managed IT</a>
         <a href="services.html">Website Management</a>
       </div>
       <div class="footer-col">
         <h5>Company</h5>
+        <a href="work.html">Work</a>
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
-        <a href="contact.html">Get a quote</a>
       </div>
       <div class="footer-col">
         <h5>Connect</h5>

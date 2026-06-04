@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Selected work from Fmsarp LLC — web, cloud, and IT projects. Case studies and references available on request.">
+  <title>Work — Fmsarp LLC</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .work-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; }
+    .work-card { background: var(--bg2); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; transition: border-color 0.25s, transform 0.25s; }
+    .work-card:hover { border-color: var(--steel-line); transform: translateY(-3px); }
+    .work-thumb { height: 180px; background: var(--bg3); border-bottom: 1px solid var(--line); display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); color: var(--fg3); font-size: 13px; position: relative; overflow: hidden; }
+    .work-thumb .grid-bg { position: absolute; inset: 0; background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px); background-size: 28px 28px; opacity: 0.5; }
+    .work-thumb .tag { position: relative; z-index: 1; border: 1px solid var(--line2); padding: 4px 12px; border-radius: 4px; background: var(--bg2); }
+    .work-body { padding: 1.5rem; }
+    .work-cat { font-family: var(--font-mono); font-size: 12px; color: var(--steel-bright); margin-bottom: 0.5rem; }
+    .work-body h3 { font-family: var(--font-display); font-weight: 700; font-size: 19px; color: var(--white); margin-bottom: 0.5rem; }
+    .work-body p { font-size: 14px; color: var(--fg2); }
+    .work-meta { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 1rem; }
+    .work-meta span { font-family: var(--font-mono); font-size: 11px; color: var(--fg3); border: 1px solid var(--line); padding: 2px 8px; border-radius: 4px; }
+    .placeholder-note { text-align: center; padding: 2.5rem; border: 1px dashed var(--line2); border-radius: 12px; margin-top: 2rem; }
+    .placeholder-note p { color: var(--fg2); font-size: 15px; }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <a class="logo" href="index.html"><span class="logo-mark"></span> FMSARP</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="work.html" class="active">Work</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" class="nav-cta">Get a quote</a></li>
+    </ul>
+    <button class="nav-burger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="work.html">Work</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Get a quote</a>
+  </div>
+</header>
+
+<div class="page-head">
+  <div class="hero-bg"></div>
+  <div class="hero-glow"></div>
+  <div class="wrap">
+    <div class="eyebrow">Work</div>
+    <h1>Selected projects &amp; engagements.</h1>
+    <p>A look at the kind of work we take on. Detailed case studies and client references are available on request.</p>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="work-grid">
+      <div class="work-card reveal">
+        <div class="work-thumb"><div class="grid-bg"></div><span class="tag">WEB PLATFORM</span></div>
+        <div class="work-body">
+          <div class="work-cat">Web Development</div>
+          <h3>Production Company Website</h3>
+          <p>A full website rebuild for a film production company — modern, fast, and built to showcase their portfolio.</p>
+          <div class="work-meta"><span>HTML/CSS/JS</span><span>Responsive</span><span>SEO</span></div>
+        </div>
+      </div>
+      <div class="work-card reveal">
+        <div class="work-thumb"><div class="grid-bg"></div><span class="tag">INFRASTRUCTURE</span></div>
+        <div class="work-body">
+          <div class="work-cat">Cloud &amp; Self-Hosting</div>
+          <h3>Self-Hosted Network Stack</h3>
+          <p>Designed and deployed a complete self-hosted networking and DNS stack with monitoring, VPN, and ad-filtering.</p>
+          <div class="work-meta"><span>OpenWrt</span><span>WireGuard</span><span>DNS</span></div>
+        </div>
+      </div>
+      <div class="work-card reveal">
+        <div class="work-thumb"><div class="grid-bg"></div><span class="tag">SAAS</span></div>
+        <div class="work-body">
+          <div class="work-cat">Full-Stack Application</div>
+          <h3>Multi-Sided SaaS Platform</h3>
+          <p>An end-to-end web application with authentication, payments, notifications, and cloud storage integration.</p>
+          <div class="work-meta"><span>React</span><span>Node</span><span>PostgreSQL</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="placeholder-note reveal">
+      <p>More case studies coming soon. For detailed write-ups, metrics, and client references, <a href="contact.html" style="color:var(--steel-bright);">get in touch</a>.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="cta-banner reveal">
+      <div class="hero-glow"></div>
+      <h2>Could your project be next?</h2>
+      <p>Tell us what you're working on and we'll show you how we'd approach it.</p>
+      <a href="contact.html" class="btn btn-primary">Start a conversation →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="logo" href="index.html"><span class="logo-mark"></span> FMSARP</a>
+        <p>Web, cloud, and managed IT engineering for businesses worldwide. Built and operated by Fmsarp LLC.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <a href="services.html">Web Development</a>
+        <a href="services.html">Cloud Infrastructure</a>
+        <a href="services.html">Managed IT</a>
+        <a href="services.html">Website Management</a>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <a href="work.html">Work</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h5>Connect</h5>
+        <a href="mailto:hello@fmsarp.com">hello@fmsarp.com</a>
+        <a href="https://github.com/fmsarp" target="_blank">GitHub</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Fmsarp LLC. All rights reserved.</span>
+      <div class="badges">
+        <span class="badge">US-Registered LLC</span>
+        <span class="badge">Remote-First</span>
+        <span class="badge">Global Delivery</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

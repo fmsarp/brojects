@@ -3,101 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Fmsarp LLC services — web development, cloud, managed IT, security, website management, and migrations. Fixed-scope projects and ongoing care plans.">
+  <meta name="description" content="Fmsarp LLC services — web development, cloud infrastructure, managed IT, security, website management, and migrations.">
   <title>Services — Fmsarp LLC</title>
   <link rel="stylesheet" href="css/style.css">
   <style>
-    .detail-block {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      align-items: start;
-      padding: 3rem 0;
-      border-bottom: 1px solid var(--line);
-    }
+    .detail-block { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: start; padding: 3.5rem 0; border-bottom: 1px solid var(--line); }
     .detail-block:last-child { border-bottom: none; }
     .detail-block.flip .detail-text { order: 2; }
-
-    .detail-num {
-      font-family: var(--font-mono);
-      font-size: 13px;
-      color: var(--accent);
-      margin-bottom: 0.75rem;
-    }
-    .detail-text h3 {
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: 28px;
-      letter-spacing: -1px;
-      margin-bottom: 1rem;
-    }
-    .detail-text p { font-size: 16px; color: var(--slate); margin-bottom: 1.5rem; }
-
+    .detail-num { font-family: var(--font-mono); font-size: 13px; color: var(--steel); margin-bottom: 0.85rem; }
+    .detail-text h3 { font-family: var(--font-display); font-weight: 800; font-size: 29px; letter-spacing: -1px; margin-bottom: 1rem; color: var(--white); }
+    .detail-text p { font-size: 16px; color: var(--fg2); margin-bottom: 1.5rem; }
     .detail-features { list-style: none; }
-    .detail-features li {
-      font-size: 14.5px;
-      padding: 10px 0 10px 26px;
-      border-bottom: 1px solid var(--line);
-      position: relative;
-    }
-    .detail-features li::before {
-      content: '✓';
-      position: absolute; left: 0;
-      color: var(--green);
-      font-weight: 700;
-    }
-
-    .detail-visual {
-      background: var(--paper2);
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 2rem;
-      font-family: var(--font-mono);
-      font-size: 13px;
-      color: var(--slate);
-      position: sticky;
-      top: 90px;
-    }
-    .detail-visual .vh {
-      display: flex; align-items: center; gap: 6px;
-      margin-bottom: 1.25rem; padding-bottom: 1rem;
-      border-bottom: 1px solid var(--line);
-    }
+    .detail-features li { font-size: 14.5px; color: var(--fg); padding: 11px 0 11px 26px; border-bottom: 1px solid var(--line); position: relative; }
+    .detail-features li::before { content: '✓'; position: absolute; left: 0; color: var(--steel-bright); font-weight: 700; }
+    .detail-visual { background: var(--bg2); border: 1px solid var(--line); border-radius: 12px; padding: 1.75rem; font-family: var(--font-mono); font-size: 13px; color: var(--fg2); position: sticky; top: 92px; }
+    .detail-visual .vh { display: flex; align-items: center; gap: 6px; margin-bottom: 1.25rem; padding-bottom: 1rem; border-bottom: 1px solid var(--line); }
     .detail-visual .vh span { width: 11px; height: 11px; border-radius: 50%; }
-    .detail-visual .vh .r { background: #ff5f57; }
-    .detail-visual .vh .y { background: #febc2e; }
-    .detail-visual .vh .g { background: #28c840; }
-    .detail-visual .line { padding: 4px 0; }
-    .detail-visual .line .k { color: var(--accent); }
-    .detail-visual .line .c { color: var(--slate2); }
+    .detail-visual .vh .r { background: #ff5f57; } .detail-visual .vh .y { background: #febc2e; } .detail-visual .vh .g { background: #28c840; }
+    .detail-visual .line { padding: 4px 0; } .detail-visual .line .k { color: var(--steel-bright); } .detail-visual .line .c { color: var(--fg3); }
+    .ok { color: #2fd07a; }
 
-    .engage { background: var(--paper2); border-top: 1px solid var(--line); }
-    .engage-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-    }
-    .engage-card {
-      background: var(--paper);
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 2rem;
-    }
-    .engage-card.featured { border: 2px solid var(--accent); position: relative; }
-    .engage-card.featured::after {
-      content: 'Most popular';
-      position: absolute; top: -11px; left: 2rem;
-      background: var(--accent); color: #fff;
-      font-size: 11px; font-family: var(--font-mono);
-      padding: 3px 10px; border-radius: 100px;
-    }
-    .engage-card h4 { font-family: var(--font-display); font-weight: 700; font-size: 20px; margin-bottom: 0.5rem; }
-    .engage-card .price { font-family: var(--font-display); font-weight: 700; font-size: 30px; letter-spacing: -1px; margin-bottom: 0.25rem; }
-    .engage-card .price small { font-size: 14px; font-weight: 400; color: var(--slate2); }
-    .engage-card .desc { font-size: 14px; color: var(--slate); margin-bottom: 1.25rem; min-height: 42px; }
+    .engage-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+    .engage-card { background: var(--bg2); border: 1px solid var(--line); border-radius: 12px; padding: 2rem; }
+    .engage-card.featured { border-color: var(--steel); position: relative; }
+    .engage-card.featured::after { content: 'Most common'; position: absolute; top: -10px; left: 2rem; background: var(--steel); color: #fff; font-size: 11px; font-family: var(--font-mono); padding: 3px 10px; border-radius: 4px; }
+    .engage-card h4 { font-family: var(--font-display); font-weight: 700; font-size: 20px; margin-bottom: 0.5rem; color: var(--white); }
+    .engage-card .price { font-family: var(--font-display); font-weight: 800; font-size: 28px; letter-spacing: -1px; margin-bottom: 0.25rem; color: var(--white); }
+    .engage-card .price small { font-size: 14px; font-weight: 400; color: var(--fg3); }
+    .engage-card .desc { font-size: 14px; color: var(--fg2); margin-bottom: 1.25rem; min-height: 42px; }
     .engage-card ul { list-style: none; margin-bottom: 1.5rem; }
-    .engage-card ul li { font-size: 13.5px; color: var(--slate); padding: 6px 0 6px 22px; position: relative; }
-    .engage-card ul li::before { content: '→'; position: absolute; left: 0; color: var(--accent); }
+    .engage-card ul li { font-size: 13.5px; color: var(--fg2); padding: 6px 0 6px 20px; position: relative; font-family: var(--font-mono); }
+    .engage-card ul li::before { content: '+'; position: absolute; left: 0; color: var(--steel); }
     .engage-card .btn { width: 100%; justify-content: center; }
 
     @media (max-width: 760px) {
@@ -111,12 +47,12 @@
 
 <header>
   <nav class="nav">
-    <a class="logo" href="index.html"><span class="logo-mark"></span> Fmsarp</a>
+    <a class="logo" href="index.html"><span class="logo-mark"></span> FMSARP</a>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="services.html" class="active">Services</a></li>
+      <li><a href="work.html">Work</a></li>
       <li><a href="about.html">About</a></li>
-      <li><a href="contact.html">Contact</a></li>
       <li><a href="contact.html" class="nav-cta">Get a quote</a></li>
     </ul>
     <button class="nav-burger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
@@ -124,36 +60,36 @@
   <div class="mobile-menu" id="mobileMenu">
     <a href="index.html">Home</a>
     <a href="services.html">Services</a>
+    <a href="work.html">Work</a>
     <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
     <a href="contact.html">Get a quote</a>
   </div>
 </header>
 
 <div class="page-head">
   <div class="hero-bg"></div>
+  <div class="hero-glow"></div>
   <div class="wrap">
-    <div class="eyebrow">// Services</div>
+    <div class="eyebrow">Services</div>
     <h1>Everything your business needs to run online.</h1>
-    <p>From the first line of code to 2am uptime alerts — we handle the technology so you can run the business. Fixed-scope projects and ongoing care plans available.</p>
+    <p>From the first line of code to 2am uptime alerts. Fixed-scope projects, ongoing care plans, and contract engagements.</p>
   </div>
 </div>
 
 <section>
   <div class="wrap">
 
-    <!-- Web Dev -->
     <div class="detail-block reveal">
       <div class="detail-text">
-        <div class="detail-num">01 / Web Development</div>
+        <div class="detail-num">01 / WEB DEVELOPMENT</div>
         <h3>Websites &amp; web apps that work as hard as you do</h3>
-        <p>We design and build fast, modern, responsive sites and applications — whether you need a marketing site that converts or a custom internal tool that saves your team hours.</p>
+        <p>We design and build fast, modern, responsive sites and applications — from a marketing site that converts to a custom internal tool that saves your team hours.</p>
         <ul class="detail-features">
           <li>Business websites &amp; landing pages</li>
           <li>Custom web applications &amp; dashboards</li>
           <li>E-commerce stores &amp; payment integration</li>
-          <li>CMS, headless, and static site builds</li>
-          <li>API development &amp; third-party integrations</li>
+          <li>CMS, headless, and static builds</li>
+          <li>API development &amp; integrations</li>
         </ul>
       </div>
       <div class="detail-visual">
@@ -162,16 +98,15 @@
         <div class="line"><span class="k">$</span> npm run build</div>
         <div class="line"><span class="c">✓ compiled successfully</span></div>
         <div class="line"><span class="k">$</span> deploy --prod</div>
-        <div class="line"><span class="c">✓ live in 1.2s · 100/100 perf</span></div>
+        <div class="line"><span class="ok">✓ live in 1.2s · 100/100 perf</span></div>
       </div>
     </div>
 
-    <!-- Cloud -->
     <div class="detail-block flip reveal">
       <div class="detail-text">
-        <div class="detail-num">02 / Cloud Services</div>
-        <h3>Cloud infrastructure done right the first time</h3>
-        <p>We architect, migrate, and manage cloud environments on AWS, Azure, and Google Cloud — built for reliability, security, and a bill that makes sense.</p>
+        <div class="detail-num">02 / CLOUD INFRASTRUCTURE</div>
+        <h3>Cloud done right the first time</h3>
+        <p>We architect, migrate, and manage environments on AWS, Azure, and Google Cloud — built for reliability, security, and a bill that makes sense.</p>
         <ul class="detail-features">
           <li>Cloud migration &amp; environment setup</li>
           <li>Infrastructure as code (Terraform)</li>
@@ -185,19 +120,18 @@
         <div class="line"><span class="c"># provision infrastructure</span></div>
         <div class="line"><span class="k">$</span> terraform apply</div>
         <div class="line"><span class="c">+ vpc, subnets, ec2, rds</span></div>
-        <div class="line"><span class="c">✓ 14 resources created</span></div>
-        <div class="line"><span class="c">✓ backups scheduled · 99.9% SLA</span></div>
+        <div class="line"><span class="ok">✓ 14 resources created</span></div>
+        <div class="line"><span class="ok">✓ backups scheduled · 99.9% SLA</span></div>
       </div>
     </div>
 
-    <!-- Managed IT -->
     <div class="detail-block reveal">
       <div class="detail-text">
-        <div class="detail-num">03 / Managed IT &amp; Support</div>
+        <div class="detail-num">03 / MANAGED IT &amp; SUPPORT</div>
         <h3>Your outsourced IT department</h3>
-        <p>Day-to-day IT support, user management, and infrastructure care — so your team always has someone to call and your systems just keep working.</p>
+        <p>Day-to-day support, user management, and infrastructure care — so your team always has someone to call and your systems just keep working.</p>
         <ul class="detail-features">
-          <li>Microsoft 365 &amp; Google Workspace administration</li>
+          <li>Microsoft 365 &amp; Google Workspace admin</li>
           <li>Help desk &amp; end-user support</li>
           <li>Device, network &amp; printer management</li>
           <li>Email, DNS &amp; domain configuration</li>
@@ -207,17 +141,16 @@
       <div class="detail-visual">
         <div class="vh"><span class="r"></span><span class="y"></span><span class="g"></span></div>
         <div class="line"><span class="c"># system health check</span></div>
-        <div class="line"><span class="k">›</span> mail flow ......... <span style="color:var(--green)">OK</span></div>
-        <div class="line"><span class="k">›</span> dns records ....... <span style="color:var(--green)">OK</span></div>
-        <div class="line"><span class="k">›</span> backups ........... <span style="color:var(--green)">OK</span></div>
-        <div class="line"><span class="k">›</span> endpoints ......... <span style="color:var(--green)">12/12</span></div>
+        <div class="line"><span class="k">›</span> mail flow ......... <span class="ok">OK</span></div>
+        <div class="line"><span class="k">›</span> dns records ....... <span class="ok">OK</span></div>
+        <div class="line"><span class="k">›</span> backups ........... <span class="ok">OK</span></div>
+        <div class="line"><span class="k">›</span> endpoints ......... <span class="ok">12/12</span></div>
       </div>
     </div>
 
-    <!-- Security -->
     <div class="detail-block flip reveal">
       <div class="detail-text">
-        <div class="detail-num">04 / Security &amp; Compliance</div>
+        <div class="detail-num">04 / SECURITY &amp; COMPLIANCE</div>
         <h3>Practical protection, not fear-selling</h3>
         <p>We assess where you're exposed and fix what matters — securing email, identities, and access without slowing your team down.</p>
         <ul class="detail-features">
@@ -231,17 +164,16 @@
       <div class="detail-visual">
         <div class="vh"><span class="r"></span><span class="y"></span><span class="g"></span></div>
         <div class="line"><span class="c"># email auth audit</span></div>
-        <div class="line"><span class="k">›</span> SPF ....... <span style="color:var(--green)">pass</span></div>
-        <div class="line"><span class="k">›</span> DKIM ...... <span style="color:var(--green)">pass</span></div>
-        <div class="line"><span class="k">›</span> DMARC ..... <span style="color:var(--green)">enforced</span></div>
-        <div class="line"><span class="k">›</span> MFA ....... <span style="color:var(--green)">enabled</span></div>
+        <div class="line"><span class="k">›</span> SPF ....... <span class="ok">pass</span></div>
+        <div class="line"><span class="k">›</span> DKIM ...... <span class="ok">pass</span></div>
+        <div class="line"><span class="k">›</span> DMARC ..... <span class="ok">enforced</span></div>
+        <div class="line"><span class="k">›</span> MFA ....... <span class="ok">enabled</span></div>
       </div>
     </div>
 
-    <!-- Website Management -->
     <div class="detail-block reveal">
       <div class="detail-text">
-        <div class="detail-num">05 / Website Management &amp; Migrations</div>
+        <div class="detail-num">05 / WEBSITE MANAGEMENT &amp; MIGRATIONS</div>
         <h3>Keep it running, or move it somewhere better</h3>
         <p>Ongoing care plans for the sites you depend on, plus clean migrations when it's time to switch hosts, platforms, or providers.</p>
         <ul class="detail-features">
@@ -255,7 +187,7 @@
       <div class="detail-visual">
         <div class="vh"><span class="r"></span><span class="y"></span><span class="g"></span></div>
         <div class="line"><span class="c"># uptime monitor · 30d</span></div>
-        <div class="line"><span class="k">›</span> availability .. <span style="color:var(--green)">99.98%</span></div>
+        <div class="line"><span class="k">›</span> availability .. <span class="ok">99.98%</span></div>
         <div class="line"><span class="k">›</span> avg response .. 240ms</div>
         <div class="line"><span class="k">›</span> ssl expiry .... 71 days</div>
         <div class="line"><span class="k">›</span> incidents ..... 0</div>
@@ -265,19 +197,18 @@
   </div>
 </section>
 
-<!-- ENGAGEMENT MODELS -->
-<section class="engage">
+<section class="services">
   <div class="wrap">
     <div class="section-head reveal">
-      <div class="eyebrow">// How to work with us</div>
-      <h2 class="section-title">Engagement models that fit how you operate.</h2>
-      <p class="section-lead">Whether you have a one-off project or need an ongoing partner, there's a way to work together. Final pricing is always quoted per project after a quick discovery call.</p>
+      <div class="eyebrow">Engagement models</div>
+      <h2 class="section-title">Ways to work with us.</h2>
+      <p class="section-lead">One-off project or ongoing partner — there's a fit. Final pricing is quoted per project after a quick discovery call.</p>
     </div>
     <div class="engage-grid">
       <div class="engage-card reveal">
         <h4>Project</h4>
         <div class="price">Fixed quote</div>
-        <div class="desc">A defined deliverable — a website, a migration, a setup — with a clear scope and price.</div>
+        <div class="desc">A defined deliverable — a website, a migration, a setup — with clear scope and price.</div>
         <ul>
           <li>Scoped &amp; quoted upfront</li>
           <li>Fixed timeline</li>
@@ -296,7 +227,7 @@
           <li>Monthly reporting</li>
           <li>Discounted project rates</li>
         </ul>
-        <a href="contact.html" class="btn btn-dark">Talk to us</a>
+        <a href="contact.html" class="btn btn-primary">Talk to us</a>
       </div>
       <div class="engage-card reveal">
         <h4>Contract</h4>
@@ -314,13 +245,13 @@
   </div>
 </section>
 
-<!-- CTA -->
 <section>
   <div class="wrap">
     <div class="cta-banner reveal">
+      <div class="hero-glow"></div>
       <h2>Not sure what you need?</h2>
-      <p>That's fine — most clients aren't at first. Tell us the problem and we'll help you figure out the right solution.</p>
-      <a href="contact.html" class="btn btn-dark">Book a discovery call →</a>
+      <p>Most clients aren't at first. Tell us the problem and we'll help you figure out the right solution.</p>
+      <a href="contact.html" class="btn btn-primary">Book a discovery call →</a>
     </div>
   </div>
 </section>
@@ -329,21 +260,21 @@
   <div class="wrap">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a class="logo" href="index.html"><span class="logo-mark"></span> Fmsarp</a>
-        <p>Web development, cloud, and managed IT services for businesses worldwide. Built and operated by Fmsarp LLC.</p>
+        <a class="logo" href="index.html"><span class="logo-mark"></span> FMSARP</a>
+        <p>Web, cloud, and managed IT engineering for businesses worldwide. Built and operated by Fmsarp LLC.</p>
       </div>
       <div class="footer-col">
         <h5>Services</h5>
         <a href="services.html">Web Development</a>
-        <a href="services.html">Cloud Services</a>
+        <a href="services.html">Cloud Infrastructure</a>
         <a href="services.html">Managed IT</a>
         <a href="services.html">Website Management</a>
       </div>
       <div class="footer-col">
         <h5>Company</h5>
+        <a href="work.html">Work</a>
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
-        <a href="contact.html">Get a quote</a>
       </div>
       <div class="footer-col">
         <h5>Connect</h5>
