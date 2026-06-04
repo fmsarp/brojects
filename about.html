@@ -1,192 +1,370 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="About Fmsarp LLC — a US-registered, remote-first engineering firm delivering web, cloud, and IT services worldwide.">
-  <title>About — Fmsarp LLC</title>
-  <link rel="stylesheet" href="css/style.css">
-  <style>
-    .about-intro { display: grid; grid-template-columns: 1.4fr 1fr; gap: 3rem; align-items: start; padding-bottom: 3.5rem; }
-    .about-intro p { font-size: 16px; color: var(--fg2); margin-bottom: 1.25rem; }
-    .about-intro p.lead { font-size: 21px; color: var(--fg); font-weight: 500; line-height: 1.5; }
-    .about-side { background: var(--bg2); border: 1px solid var(--line); border-radius: 12px; padding: 1.75rem; }
-    .about-side h4 { font-family: var(--font-mono); font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: var(--fg3); margin-bottom: 1rem; }
-    .about-fact { padding: 0.85rem 0; border-bottom: 1px solid var(--line); }
-    .about-fact:last-child { border-bottom: none; }
-    .about-fact .k { font-size: 12px; color: var(--fg3); font-family: var(--font-mono); }
-    .about-fact .v { font-size: 15px; font-weight: 600; color: var(--white); }
-    .values-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
-    .value-card { background: var(--bg2); border: 1px solid var(--line); border-radius: 12px; padding: 1.75rem; }
-    .value-card .n { font-family: var(--font-mono); font-size: 13px; color: var(--steel); margin-bottom: 0.75rem; }
-    .value-card h4 { font-family: var(--font-display); font-weight: 700; font-size: 19px; margin-bottom: 0.5rem; color: var(--white); }
-    .value-card p { font-size: 14.5px; color: var(--fg2); }
-    .team-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-    .team-card { border: 1px solid var(--line); border-radius: 12px; padding: 2rem; background: var(--bg2); }
-    .team-avatar { width: 56px; height: 56px; border-radius: 10px; border: 1px solid var(--steel); color: var(--steel-bright); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-weight: 800; font-size: 22px; margin-bottom: 1rem; }
-    .team-card h4 { font-family: var(--font-display); font-weight: 700; font-size: 20px; color: var(--white); }
-    .team-card .role { font-family: var(--font-mono); font-size: 13px; color: var(--steel-bright); margin-bottom: 0.75rem; }
-    .team-card p { font-size: 14.5px; color: var(--fg2); }
-    @media (max-width: 760px) { .about-intro { grid-template-columns: 1fr; gap: 2rem; } .team-grid { grid-template-columns: 1fr; } }
-  </style>
-</head>
-<body>
-
-<header>
-  <nav class="nav">
-    <a class="logo" href="index.html"><span class="logo-mark"></span> FMSARP</a>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="work.html">Work</a></li>
-      <li><a href="about.html" class="active">About</a></li>
-      <li><a href="contact.html" class="nav-cta">Get a quote</a></li>
-    </ul>
-    <button class="nav-burger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
-  </nav>
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="index.html">Home</a>
-    <a href="services.html">Services</a>
-    <a href="work.html">Work</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Get a quote</a>
-  </div>
-</header>
-
-<div class="page-head">
-  <div class="hero-bg"></div>
-  <div class="hero-glow"></div>
-  <div class="wrap">
-    <div class="eyebrow">About</div>
-    <h1>A small firm that takes ownership seriously.</h1>
-    <p>Fmsarp LLC is a remote-first engineering company built on a simple idea: businesses deserve a technology partner who actually answers the phone.</p>
-  </div>
-</div>
-
-<section>
-  <div class="wrap">
-    <div class="about-intro reveal">
-      <div>
-        <p class="lead">We started Fmsarp because we kept seeing the same thing — businesses stuck between freelancers who disappear and big agencies that overcharge and under-communicate.</p>
-        <p>We do it differently. When you work with us, you work directly with the engineers building and running your systems. No layers, no runaround — just people who care about doing the work well and standing behind it.</p>
-        <p>From custom web platforms to cloud infrastructure to the everyday IT that keeps an office running, we bring real hands-on experience across the full stack. We're US-based with international reach, delivering remotely to clients wherever they are.</p>
-        <p>We're equally comfortable taking on a quick fixed-scope project or becoming the long-term technology partner you call first.</p>
-      </div>
-      <div class="about-side">
-        <h4>At a glance</h4>
-        <div class="about-fact"><div class="k">entity</div><div class="v">Fmsarp LLC</div></div>
-        <div class="about-fact"><div class="k">based</div><div class="v">United States</div></div>
-        <div class="about-fact"><div class="k">delivery</div><div class="v">Remote / Global</div></div>
-        <div class="about-fact"><div class="k">focus</div><div class="v">Web · Cloud · IT</div></div>
-        <div class="about-fact"><div class="k">availability</div><div class="v">Open for contracts</div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="services">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <div class="eyebrow">Principles</div>
-      <h2 class="section-title">What we don't compromise on.</h2>
-    </div>
-    <div class="values-grid">
-      <div class="value-card reveal">
-        <div class="n">// 01</div>
-        <h4>Honesty first</h4>
-        <p>We tell you what you need, not what's most profitable for us — even when that means a smaller invoice.</p>
-      </div>
-      <div class="value-card reveal">
-        <div class="n">// 02</div>
-        <h4>Own the outcome</h4>
-        <p>We don't hand off and disappear. If it has our name on it, we make sure it works and keeps working.</p>
-      </div>
-      <div class="value-card reveal">
-        <div class="n">// 03</div>
-        <h4>Clear communication</h4>
-        <p>No jargon walls, no silence. You'll always know what's happening and what comes next.</p>
-      </div>
-      <div class="value-card reveal">
-        <div class="n">// 04</div>
-        <h4>Build to last</h4>
-        <p>We favor solutions that are maintainable, documented, and yours — not locked to us forever.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <div class="section-head reveal">
-      <div class="eyebrow">The team</div>
-      <h2 class="section-title">The people behind the work.</h2>
-      <p class="section-lead">A focused team with complementary strengths across development, infrastructure, and IT operations.</p>
-    </div>
-    <div class="team-grid">
-      <div class="team-card reveal">
-        <div class="team-avatar">F</div>
-        <h4>Franklin</h4>
-        <div class="role">Founder · Full-Stack &amp; IT</div>
-        <p>Full-stack developer and IT specialist based in the US. Leads web development, Microsoft 365 administration, infrastructure, and client delivery.</p>
-      </div>
-      <div class="team-card reveal">
-        <div class="team-avatar">+</div>
-        <h4>Partner</h4>
-        <div class="role">Co-Founder · Engineering</div>
-        <p>Brings additional engineering capacity and a complementary skill set, expanding the team's reach across projects and time zones.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <div class="cta-banner reveal">
-      <div class="hero-glow"></div>
-      <h2>Let's work together.</h2>
-      <p>Have a project, a problem, or a contract in mind? We'd love to hear about it.</p>
-      <a href="contact.html" class="btn btn-primary">Get in touch →</a>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="wrap">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <a class="logo" href="index.html"><span class="logo-mark"></span> FMSARP</a>
-        <p>Web, cloud, and managed IT engineering for businesses worldwide. Built and operated by Fmsarp LLC.</p>
-      </div>
-      <div class="footer-col">
-        <h5>Services</h5>
-        <a href="services.html">Web Development</a>
-        <a href="services.html">Cloud Infrastructure</a>
-        <a href="services.html">Managed IT</a>
-        <a href="services.html">Website Management</a>
-      </div>
-      <div class="footer-col">
-        <h5>Company</h5>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="About Fmsarp LLC — a US-registered, remote-first engineering firm delivering web, cloud, and IT services worldwide."
+    />
+    <title>About — Fmsarp LLC</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      .about-intro {
+        display: grid;
+        grid-template-columns: 1.4fr 1fr;
+        gap: 3rem;
+        align-items: start;
+        padding-bottom: 3.5rem;
+      }
+      .about-intro p {
+        font-size: 16px;
+        color: var(--fg2);
+        margin-bottom: 1.25rem;
+      }
+      .about-intro p.lead {
+        font-size: 21px;
+        color: var(--fg);
+        font-weight: 500;
+        line-height: 1.5;
+      }
+      .about-side {
+        background: var(--bg2);
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 1.75rem;
+      }
+      .about-side h4 {
+        font-family: var(--font-mono);
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: var(--fg3);
+        margin-bottom: 1rem;
+      }
+      .about-fact {
+        padding: 0.85rem 0;
+        border-bottom: 1px solid var(--line);
+      }
+      .about-fact:last-child {
+        border-bottom: none;
+      }
+      .about-fact .k {
+        font-size: 12px;
+        color: var(--fg3);
+        font-family: var(--font-mono);
+      }
+      .about-fact .v {
+        font-size: 15px;
+        font-weight: 600;
+        color: var(--white);
+      }
+      .values-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+      }
+      .value-card {
+        background: var(--bg2);
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 1.75rem;
+      }
+      .value-card .n {
+        font-family: var(--font-mono);
+        font-size: 13px;
+        color: var(--steel);
+        margin-bottom: 0.75rem;
+      }
+      .value-card h4 {
+        font-family: var(--font-display);
+        font-weight: 700;
+        font-size: 19px;
+        margin-bottom: 0.5rem;
+        color: var(--white);
+      }
+      .value-card p {
+        font-size: 14.5px;
+        color: var(--fg2);
+      }
+      .team-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+      }
+      .team-card {
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 2rem;
+        background: var(--bg2);
+      }
+      .team-avatar {
+        width: 56px;
+        height: 56px;
+        border-radius: 10px;
+        border: 1px solid var(--steel);
+        color: var(--steel-bright);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: var(--font-display);
+        font-weight: 800;
+        font-size: 22px;
+        margin-bottom: 1rem;
+      }
+      .team-card h4 {
+        font-family: var(--font-display);
+        font-weight: 700;
+        font-size: 20px;
+        color: var(--white);
+      }
+      .team-card .role {
+        font-family: var(--font-mono);
+        font-size: 13px;
+        color: var(--steel-bright);
+        margin-bottom: 0.75rem;
+      }
+      .team-card p {
+        font-size: 14.5px;
+        color: var(--fg2);
+      }
+      @media (max-width: 760px) {
+        .about-intro {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+        }
+        .team-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="nav">
+        <a class="logo" href="index.html"
+          ><span class="logo-mark"></span> FMSARP</a
+        >
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="about.html" class="active">About</a></li>
+          <li><a href="contact.html" class="nav-cta">Get a quote</a></li>
+        </ul>
+        <button class="nav-burger" onclick="toggleMenu()" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+      <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
         <a href="work.html">Work</a>
         <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
+        <a href="contact.html">Get a quote</a>
       </div>
-      <div class="footer-col">
-        <h5>Connect</h5>
-        <a href="mailto:hello@fmsarp.com">hello@fmsarp.com</a>
-        <a href="https://github.com/fmsarp" target="_blank">GitHub</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2026 Fmsarp LLC. All rights reserved.</span>
-      <div class="badges">
-        <span class="badge">US-Registered LLC</span>
-        <span class="badge">Remote-First</span>
-        <span class="badge">Global Delivery</span>
-      </div>
-    </div>
-  </div>
-</footer>
+    </header>
 
-<script src="js/main.js"></script>
-</body>
+    <div class="page-head">
+      <div class="hero-bg"></div>
+      <div class="hero-glow"></div>
+      <div class="wrap">
+        <div class="eyebrow">About</div>
+        <h1>A small firm that takes ownership seriously.</h1>
+        <p>
+          Fmsarp LLC is a remote-first engineering company built on a simple
+          idea: businesses deserve a technology partner who actually answers the
+          phone.
+        </p>
+      </div>
+    </div>
+
+    <section>
+      <div class="wrap">
+        <div class="about-intro reveal">
+          <div>
+            <p class="lead">
+              We started Fmsarp because we kept seeing the same thing —
+              businesses stuck between freelancers who disappear and big
+              agencies that overcharge and under-communicate.
+            </p>
+            <p>
+              We do it differently. When you work with us, you work directly
+              with the engineers building and running your systems. No layers,
+              no runaround — just people who care about doing the work well and
+              standing behind it.
+            </p>
+            <p>
+              From custom web platforms to cloud infrastructure to the everyday
+              IT that keeps an office running, we bring real hands-on experience
+              across the full stack. We're US-based with international reach,
+              delivering remotely to clients wherever they are.
+            </p>
+            <p>
+              We're equally comfortable taking on a quick fixed-scope project or
+              becoming the long-term technology partner you call first.
+            </p>
+          </div>
+          <div class="about-side">
+            <h4>At a glance</h4>
+            <div class="about-fact">
+              <div class="k">entity</div>
+              <div class="v">Fmsarp LLC</div>
+            </div>
+            <div class="about-fact">
+              <div class="k">based</div>
+              <div class="v">United States</div>
+            </div>
+            <div class="about-fact">
+              <div class="k">delivery</div>
+              <div class="v">Remote / Global</div>
+            </div>
+            <div class="about-fact">
+              <div class="k">focus</div>
+              <div class="v">Web · Cloud · IT</div>
+            </div>
+            <div class="about-fact">
+              <div class="k">availability</div>
+              <div class="v">Open for contracts</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div class="eyebrow">Principles</div>
+          <h2 class="section-title">What we don't compromise on.</h2>
+        </div>
+        <div class="values-grid">
+          <div class="value-card reveal">
+            <div class="n">// 01</div>
+            <h4>Honesty first</h4>
+            <p>
+              We tell you what you need, not what's most profitable for us —
+              even when that means a smaller invoice.
+            </p>
+          </div>
+          <div class="value-card reveal">
+            <div class="n">// 02</div>
+            <h4>Own the outcome</h4>
+            <p>
+              We don't hand off and disappear. If it has our name on it, we make
+              sure it works and keeps working.
+            </p>
+          </div>
+          <div class="value-card reveal">
+            <div class="n">// 03</div>
+            <h4>Clear communication</h4>
+            <p>
+              No jargon walls, no silence. You'll always know what's happening
+              and what comes next.
+            </p>
+          </div>
+          <div class="value-card reveal">
+            <div class="n">// 04</div>
+            <h4>Build to last</h4>
+            <p>
+              We favor solutions that are maintainable, documented, and yours —
+              not locked to us forever.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div class="eyebrow">The team</div>
+          <h2 class="section-title">The people behind the work.</h2>
+          <p class="section-lead">
+            A focused team with complementary strengths across development,
+            infrastructure, and IT operations.
+          </p>
+        </div>
+        <div class="team-grid">
+          <div class="team-card reveal">
+            <div class="team-avatar">F</div>
+            <h4>Franklin</h4>
+            <div class="role">Founder · Full-Stack &amp; IT</div>
+            <p>
+              Full-stack developer and IT specialist based in the US. Leads web
+              development, Microsoft 365 administration, infrastructure, and
+              client delivery.
+            </p>
+          </div>
+          <div class="team-card reveal">
+            <div class="team-avatar">+</div>
+            <h4>Vincent</h4>
+            <div class="role">Co-Founder · Engineering</div>
+            <p>
+              Brings additional engineering capacity and a complementary skill
+              set, expanding the team's reach across projects and time zones.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="cta-banner reveal">
+          <div class="hero-glow"></div>
+          <h2>Let's work together.</h2>
+          <p>
+            Have a project, a problem, or a contract in mind? We'd love to hear
+            about it.
+          </p>
+          <a href="contact.html" class="btn btn-primary">Get in touch →</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="wrap">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a class="logo" href="index.html"
+              ><span class="logo-mark"></span> FMSARP</a
+            >
+            <p>
+              Web, cloud, and managed IT engineering for businesses worldwide.
+              Built and operated by Fmsarp LLC.
+            </p>
+          </div>
+          <div class="footer-col">
+            <h5>Services</h5>
+            <a href="services.html">Web Development</a>
+            <a href="services.html">Cloud Infrastructure</a>
+            <a href="services.html">Managed IT</a>
+            <a href="services.html">Website Management</a>
+          </div>
+          <div class="footer-col">
+            <h5>Company</h5>
+            <a href="work.html">Work</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+          </div>
+          <div class="footer-col">
+            <h5>Connect</h5>
+            <a href="mailto:hello@fmsarp.com">hello@fmsarp.com</a>
+            <a href="https://github.com/fmsarp" target="_blank">GitHub</a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>© 2026 Fmsarp LLC. All rights reserved.</span>
+          <div class="badges">
+            <span class="badge">US-Registered LLC</span>
+            <span class="badge">Remote-First</span>
+            <span class="badge">Global Delivery</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
 </html>
